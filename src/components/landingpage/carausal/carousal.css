@@ -1,0 +1,109 @@
+.banner {
+  background-size: cover;
+  background-position: center top;
+  height: 680px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: slideshow 25s infinite;
+  background-size: cover;
+}
+
+@keyframes slideshow {
+  0% {
+    background-image: url("https://res.cloudinary.com/dspqnsoy1/image/upload/v1683804693/Ecom%20App-NEOG/Sprouting_Jar_Kit_Banner_Computer_a169d857-b9f2-4c15-a78f-768ae1de8e25_c59ymn.webp");
+  }
+  33.33% {
+    background-image: url("https://res.cloudinary.com/dspqnsoy1/image/upload/v1683804814/Ecom%20App-NEOG/No_Coffee_Powder_Banner_Computer_5f370930-e317-4d2e-8ae5-da4fce6a6ca2_n0stbh.webp");
+  }
+  66.67% {
+    background-image: url("https://res.cloudinary.com/dspqnsoy1/image/upload/v1683804895/Ecom%20App-NEOG/Bio_Enzyme_Banner_Desktop_63f75c09-1426-4be7-adb4-aa0b53fa0bc7_1_jxlqhw.webp");
+  }
+  100% {
+    background-image: url("https://res.cloudinary.com/dspqnsoy1/image/upload/v1683804895/Ecom%20App-NEOG/Bio_Enzyme_Banner_Desktop_63f75c09-1426-4be7-adb4-aa0b53fa0bc7_1_jxlqhw.webp");
+  }
+}
+
+.banner-text {
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 30px;
+  border-radius: 10px;
+  transition: border-radius 0.3s ease;
+}
+.banner-text:hover {
+  border-radius: 25px;
+}
+.banner-text h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #448667;
+}
+
+.banner-text p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 30%;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transform: scale(1);
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 250px;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .banner-text {
+    padding: 15px;
+  }
+
+  .banner-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .banner-text p {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+  .btn {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 300px;
+    background-size: cover;
+    background-position: center top;
+  }
+  .banner-text {
+    padding: 20px;
+  }
+  .banner-text h2 {
+    font-size: 1.75rem;
+  }
+  .banner-text p {
+    font-size: 1.125rem;
+  }
+}
