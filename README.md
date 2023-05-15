@@ -1,3 +1,5 @@
-## E-Commerce Backend
+# Organico Store
 
-This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
+Organico" is a name derived from the word "organic." It suggests a focus on organic products, emphasizing natural and sustainable choices. platform that promotes and offers organic and natural products to its users.
+
+Project is in Devlopment
