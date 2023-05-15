@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { NavBar, LandingPage } from "components";
+import { NavBar, LandingPage, Footer } from "components";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
