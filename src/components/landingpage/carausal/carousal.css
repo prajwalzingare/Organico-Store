@@ -1,7 +1,7 @@
 .banner {
   background-size: cover;
   background-position: center top;
-  height: 680px;
+  height: 550px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
 .banner-text {
   background-color: #fff;
   opacity: 0.9;
-  padding: 30px;
+  padding: 25px;
   border-radius: 10px;
   transition: border-radius 0.3s ease;
 }
@@ -36,14 +36,14 @@
   border-radius: 25px;
 }
 .banner-text h2 {
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   font-weight: 500;
   margin-bottom: 10px;
   color: #448667;
 }
 
 .banner-text p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 30px;
 }
 
