@@ -22,7 +22,7 @@
 .featured-card {
   align-items: center;
   width: 250px;
-  padding: 7px;
+  padding: 9px;
   margin: 5px;
   border-radius: 10px;
   cursor: pointer;
@@ -50,18 +50,18 @@
 
 .featured-card-title {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 5px;
 }
 .featured-card-description {
   margin-top: 10px;
-  line-height: 1.2rem;
+  line-height: 1.3rem;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 @media screen and (max-width: 768px) {
   .heading-3 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
