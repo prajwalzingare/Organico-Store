@@ -1,0 +1,67 @@
+.landingpage-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-3 {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  align-self: center;
+}
+.landingpage-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.featured-card {
+  align-items: center;
+  width: 250px;
+  padding: 9px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.featured-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.04);
+}
+.featured-card-image {
+  box-sizing: border-box;
+  height: 15rem;
+  padding-bottom: 1rem;
+  width: 15rem;
+  align-items: center;
+}
+.featured-card-image > img {
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.featured-card-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+.featured-card-description {
+  margin-top: 10px;
+  line-height: 1.3rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .heading-3 {
+    font-size: 1.9rem;
+  }
+}
