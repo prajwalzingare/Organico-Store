@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { NavBar, LandingPage, Footer } from "components";
+import { NavBar, LandingPage, Footer, ProductListingPage } from "components";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/products" element={<ProductListingPage />} />
       </Routes>
       <Footer />
     </div>
