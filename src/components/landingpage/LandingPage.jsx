@@ -31,7 +31,7 @@ function LandingPage() {
           <h3 className="heading-3">Our Featured Collections</h3>
           <div className="landingpage-cards">
             {data.map((item) => {
-              const { _id, title, imgUrl, content } = item;
+              const { title, imgUrl, content } = item;
               return (
                 <div className="featured-card">
                   <div className="featured-card-image">
@@ -51,7 +51,7 @@ function LandingPage() {
           {/* <div className="featured-product-card"></div> */}
           <div className="landingpage-cards">
             {data.map((item) => {
-              const { _id, title, imgUrl, content } = item;
+              const { title, imgUrl, content } = item;
               return (
                 <div className="featured-card">
                   <div className="featured-card-image">
