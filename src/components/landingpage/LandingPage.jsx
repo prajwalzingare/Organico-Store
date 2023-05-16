@@ -38,21 +38,23 @@ function LandingPage() {
             })}
           </div>
         </div>
+        {/* fetured product card  */}
         <div className="landingpage-cards-container">
           <h3 className="heading-3">Featured Product</h3>
-
           <div className="landingpage-cards">
             {feturedProduct?.map((item) => {
               const { title, imgUrl, description, rating, totalReviews } = item;
               return (
-                <div className="featured-product-card">
+                <div className="fp-card">
                   <div className="featured-card-image">
                     <img src={imgUrl} alt={title} />
                   </div>
-                  <div className="featured-product-card-details">
-                    <p className="featured-card-description">{description}</p>
-                    <p className="fetured-card-rating">
-                      {rating} <StarIcon /> ||{totalReviews}
+                  <div className="fp-content">
+                    <p className="fp-description">{description}</p>
+
+                    <p className="fp-rating">
+                      {rating} <StarIcon className="fp-icon" /> | {totalReviews}{" "}
+                      reviews
                     </p>
                   </div>
                 </div>
