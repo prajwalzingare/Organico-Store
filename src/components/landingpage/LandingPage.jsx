@@ -1,36 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+
 import Carousal from "./carausal/Carousal";
 import "./landingpage.css";
+import { useProduct } from "context";
+import { StarIcon } from "assets";
 
 function LandingPage() {
-  const [data, setData] = useState([]);
+  const { productData, categoriesData } = useProduct();
 
-  const fetchData = async () => {
-    try {
-      const data = await fetch("/api/categories");
-      const response = await data.json();
-      console.log(response);
-      setData(response.categories);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const feturedProduct = productData
+    .filter((item) => item.rating === "5")
+    .slice(0, 4);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <div>
       <div className="middle-container">
         <div>
           <Carousal />
         </div>
-
         {/* cards */}
         <div className="landingpage-cards-container">
           <h3 className="heading-3">Our Featured Collections</h3>
           <div className="landingpage-cards">
-            {data.map((item) => {
+            {categoriesData?.map((item) => {
               const { title, imgUrl, content } = item;
               return (
                 <div className="featured-card">
@@ -48,18 +40,20 @@ function LandingPage() {
         </div>
         <div className="landingpage-cards-container">
           <h3 className="heading-3">Featured Product</h3>
-          {/* <div className="featured-product-card"></div> */}
+
           <div className="landingpage-cards">
-            {data.map((item) => {
-              const { title, imgUrl, content } = item;
+            {feturedProduct?.map((item) => {
+              const { title, imgUrl, description, rating, totalReviews } = item;
               return (
-                <div className="featured-card">
+                <div className="featured-product-card">
                   <div className="featured-card-image">
                     <img src={imgUrl} alt={title} />
                   </div>
-                  <div className="featured-card-details">
-                    <p className="featured-card-title">{title}</p>
-                    <p className="featured-card-description">{content}</p>
+                  <div className="featured-product-card-details">
+                    <p className="featured-card-description">{description}</p>
+                    <p className="fetured-card-rating">
+                      {rating} <StarIcon /> ||{totalReviews}
+                    </p>
                   </div>
                 </div>
               );
