@@ -27,7 +27,7 @@ export const products = [
       "All time favourite for Home-made, Dairy-free Chocolate Lovers! Healthier substitute for commonly used cocoa powder. Contains more calcium than dairy milk!",
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684126075/Ecom%20App-NEOG/Dairy%20Substitutes/Preview-1CacaoPowder_700x_rjno1o.webp",
-    rating: "4",
+    rating: "5",
     totalReviews: 40,
     price: "310",
     categoryName: "Dairy_Substitutes",
@@ -213,7 +213,7 @@ export const products = [
       "A perfect Nature-friendly alternative to Plastic Straws! It helps you enjoy a guilt-free conscious by saying NO to single-use plastic and doing your bit to reduce the plastic waste burden from Mother Earth.",
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684210507/Ecom%20App-NEOG/Plastic%20subtitutes/Preview-1SteelStrawswithCleaningBrushes_33050455-26d0-40e9-8928-7d702cae197d_700x_fjulhv.webp",
-    rating: "4",
+    rating: "5",
     totalReviews: 400,
     price: "400",
     categoryName: "Plastic_Alternatives",
