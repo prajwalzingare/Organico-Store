@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import "./filters.css";
+import { useData } from "context";
+//constants from constant file for filter state
+import { PRICE_SORT } from "constants";
 
 function Filters() {
+  //for toggling filters class for mobile
   const [displayMobileFilters, setDisplayMobileFilters] = useState(false);
+  //dispatchFilter function for dispatching the action
+  const { dispatchFilter } = useData();
+
   return (
     <div>
       <section
@@ -29,7 +36,15 @@ function Filters() {
         <div className="filter-price">
           <p className="filter-heading">Sort</p>
           <div>
-            <input type="radio" id="hightolow" name="sort" />
+            <input
+              type="radio"
+              id="hightolow"
+              name="sort"
+              value="hightolow"
+              onChange={(e) =>
+                dispatchFilter({ type: PRICE_SORT, payload: e.target.value })
+              }
+            />
             <label htmlFor="hightolow" className="filters-label-text">
               {" "}
               Price High To Low
@@ -37,7 +52,15 @@ function Filters() {
           </div>
 
           <div>
-            <input type="radio" id="lowtohigh" name="sort" />
+            <input
+              type="radio"
+              id="lowtohigh"
+              name="sort"
+              value="lowtohigh"
+              onChange={(e) =>
+                dispatchFilter({ type: PRICE_SORT, payload: e.target.value })
+              }
+            />
             <label htmlFor="lowtohigh" className="filters-label-text">
               {" "}
               Price Low To High
@@ -81,6 +104,7 @@ function Filters() {
         {/* filter for Categories  */}
         <hr />
         <div className="filter-categories">
+          <p className="filter-heading"> Categories</p>
           <div>
             <input type="checkbox" id="dairy-substitutes" />
             <label htmlFor="dairy-substitutes" className="filters-label-text">
