@@ -9,3 +9,12 @@
   --black-color: #000000;
   --boxshadow-color: rgba(0, 0, 0, 0.3);
 }
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+}
