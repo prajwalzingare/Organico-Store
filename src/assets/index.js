@@ -8,4 +8,6 @@ export {
   LinkedInIcon,
   InstagramIcon,
   StarIcon,
+  AddShoppingCartIcon,
+  FavoriteBorderOutlinedIcon,
 } from "./icons/materialIcons";
