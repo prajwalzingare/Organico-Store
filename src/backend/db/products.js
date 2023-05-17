@@ -15,10 +15,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684207345/Ecom%20App-NEOG/Dairy%20Substitutes/Preview-1CoconutMilkPowder_700x_qw4uu4.webp",
     rating: "4",
-    totalReviews: 2,
+    totalReviews: 200,
     price: "900",
+    originalPrice: "1500",
     categoryName: "Dairy_Substitutes",
     isOutOfStock: false,
+    isTrending: true,
   },
   {
     _id: uuid(),
@@ -28,10 +30,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684126075/Ecom%20App-NEOG/Dairy%20Substitutes/Preview-1CacaoPowder_700x_rjno1o.webp",
     rating: "5",
-    totalReviews: 40,
+    totalReviews: 400,
     price: "310",
+    originalPrice: "1000",
     categoryName: "Dairy_Substitutes",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -41,10 +45,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684125921/Ecom%20App-NEOG/Dairy%20Substitutes/Preview-1CacaoNibs_700x_ctiju7.webp",
     rating: "3",
-    totalReviews: 60,
+    totalReviews: 600,
     price: "400",
+    originalPrice: "1800",
     categoryName: "Dairy_Substitutes",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -53,11 +59,13 @@ export const products = [
       "A perfect alternative to commonly used dairy butter with 100% Almonds & Nothing Else!",
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684207781/Ecom%20App-NEOG/Dairy%20Substitutes/Preview-1AlmondButter_700x_cjlsdx.webp",
-    rating: "5 ",
-    totalReviews: 200,
+    rating: "5",
+    totalReviews: 800,
     price: "700",
+    originalPrice: "2000",
     categoryName: "Dairy_Substitutes",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -67,10 +75,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684207912/Ecom%20App-NEOG/Dairy%20Substitutes/Preview-1PeanutButter_b1443aa9-1589-4274-aa34-7fe74057d412_700x_wu7wxh.webp",
     rating: "5",
-    totalReviews: 2,
+    totalReviews: 500,
     price: "800",
+    originalPrice: "4000",
     categoryName: "Dairy_Substitutes",
     isOutOfStock: false,
+    isTrending: false,
   },
 
   //Tea_Coffee_Replacements
@@ -84,8 +94,10 @@ export const products = [
     rating: "4",
     totalReviews: 200,
     price: "200",
+    originalPrice: "1900",
     categoryName: "Tea_Coffee_Replacements",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -95,10 +107,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684209297/Ecom%20App-NEOG/tea-coffe-replacment/Preview-1ChamomileDiredFlowersandTea_700x_hwyci4.webp",
     rating: "2",
-    totalReviews: 40,
+    totalReviews: 4000,
     price: "200",
+    originalPrice: "1900",
     categoryName: "Tea_Coffee_Replacements",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -108,10 +122,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684209406/Ecom%20App-NEOG/tea-coffe-replacment/Preview-1LemongrassRoseHerbalTea_700x_xtqusj.webp",
     rating: "1",
-    totalReviews: 30,
+    totalReviews: 300,
     price: "99",
+    originalPrice: "1000",
     categoryName: "Tea_Coffee_Replacements",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -121,10 +137,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684209528/Ecom%20App-NEOG/tea-coffe-replacment/Preview-1TulsiMoringaTeaandCup_700x_w63yei.webp",
     rating: "4",
-    totalReviews: 2,
+    totalReviews: 2000,
     price: "99",
+    originalPrice: "1000",
     categoryName: "Tea_Coffee_Replacements",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -134,10 +152,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684209683/Ecom%20App-NEOG/tea-coffe-replacment/Preview-1CurryThymeTea_700x_tk4xhc.webp",
     rating: "4",
-    totalReviews: 32,
+    totalReviews: 3200,
     price: "95",
+    originalPrice: "500",
     categoryName: "Tea_Coffee_Replacements",
     isOutOfStock: false,
+    isTrending: false,
   },
   //Nuts_And_Seeds
   {
@@ -148,10 +168,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684209874/Ecom%20App-NEOG/nuts%20and%20seeds/Preview-1FlaxSeeds_700x_v7gl5w.webp",
     rating: "4",
-    totalReviews: 100,
+    totalReviews: 1000,
     price: "100",
+    originalPrice: "900",
     categoryName: "Nuts_And_Seeds",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -161,10 +183,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684210065/Ecom%20App-NEOG/nuts%20and%20seeds/Preview-1SunFlowerSeeds_700x_zoaykf.webp",
     rating: "3",
-    totalReviews: 45,
-    price: "180",
+    totalReviews: 4500,
+    price: "300",
+    originalPrice: "800",
     categoryName: "Nuts_And_Seeds",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -174,10 +198,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684033066/Ecom%20App-NEOG/nuts%20and%20seeds/Preview-1Cashews_700x_dyonvb.webp",
     rating: "4",
-    totalReviews: 2,
+    totalReviews: 2500,
     price: "500",
+    originalPrice: "1500",
     categoryName: "Nuts_And_Seeds",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -187,10 +213,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684210296/Ecom%20App-NEOG/nuts%20and%20seeds/Preview-1Almonds_700x_d2iota.webp",
     rating: "5",
-    totalReviews: 400,
+    totalReviews: 4000,
     price: "1100",
+    originalPrice: "5000",
     categoryName: "Nuts_And_Seeds",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -200,10 +228,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684210395/Ecom%20App-NEOG/nuts%20and%20seeds/Preview-1RaisinsGolden_700x_lndkib.webp",
     rating: "4",
-    totalReviews: 200,
+    totalReviews: 2000,
     price: "350",
+    originalPrice: "5500",
     categoryName: "Nuts_And_Seeds",
     isOutOfStock: false,
+    isTrending: false,
   },
   //Plastic_Alternatives
   {
@@ -214,10 +244,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684210507/Ecom%20App-NEOG/Plastic%20subtitutes/Preview-1SteelStrawswithCleaningBrushes_33050455-26d0-40e9-8928-7d702cae197d_700x_fjulhv.webp",
     rating: "5",
-    totalReviews: 400,
+    totalReviews: 4000,
     price: "400",
+    originalPrice: "500",
     categoryName: "Plastic_Alternatives",
     isOutOfStock: false,
+    isTrending: true,
   },
   {
     _id: uuid(),
@@ -226,11 +258,13 @@ export const products = [
       "A Natural Repair for Your Hair! Being plant-based, these wooden combs biodegrade entirely. Their soft edges are gentle for hair, and these combs are excellent for hair health due to their beneficial properties.",
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684210696/Ecom%20App-NEOG/Plastic%20subtitutes/Preview-1NeemWoodComb_700x_cupghu.webp",
-    rating: "800",
-    totalReviews: 200,
+    rating: "4",
+    totalReviews: 2000,
     price: "150",
+    originalPrice: "1000",
     categoryName: "Plastic_Alternatives",
     isOutOfStock: false,
+    isTrending: true,
   },
   {
     _id: uuid(),
@@ -240,10 +274,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684210856/Ecom%20App-NEOG/Plastic%20subtitutes/Preview-2NeemWoodSoapCaseDualHolderwithHolder_400x_ioq1ub.webp",
     rating: "4",
-    totalReviews: 200,
+    totalReviews: 3500,
     price: "400",
+    originalPrice: "800",
     categoryName: "Plastic_Alternatives",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -253,10 +289,12 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684210954/Ecom%20App-NEOG/Plastic%20subtitutes/Preview-3GroceryBagwithDimensions_700x_sv5jhk.webp",
     rating: "5",
-    totalReviews: 200,
+    totalReviews: 2100,
     price: "700",
+    originalPrice: "900",
     categoryName: "Plastic_Alternatives",
     isOutOfStock: false,
+    isTrending: false,
   },
   {
     _id: uuid(),
@@ -266,9 +304,11 @@ export const products = [
     imgUrl:
       "https://res.cloudinary.com/dspqnsoy1/image/upload/v1684211113/Ecom%20App-NEOG/Plastic%20subtitutes/soft-pure-natural-eco-friendly-biodegradable-wooden-toothbrush-229_d1i49g.jpg",
     rating: "5",
-    totalReviews: 200,
+    totalReviews: 2200,
     price: "150",
+    originalPrice: "300",
     categoryName: "Plastic_Alternatives",
     isOutOfStock: false,
+    isTrending: false,
   },
 ];
