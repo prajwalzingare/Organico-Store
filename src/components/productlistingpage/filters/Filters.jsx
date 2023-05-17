@@ -13,7 +13,7 @@ function Filters() {
         <div className="filters-header">
           {displayMobileFilters ? (
             <button
-              className="btn-link btn-link-primary btn-no-decoration"
+              className="btn-Apply-filter"
               onClick={() => setDisplayMobileFilters(!displayMobileFilters)}
             >
               APPLY
