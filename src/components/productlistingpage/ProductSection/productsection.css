@@ -8,4 +8,5 @@
   gap: 10px;
   overflow-y: auto;
   max-height: calc(100vh - 4rem);
+  justify-content: center;
 }
