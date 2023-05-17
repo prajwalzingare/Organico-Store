@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const ProductsContext = createContext();
@@ -6,28 +7,21 @@ function ProductsProvider({ children }) {
   const [productData, setProductData] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
 
-  const fetchProducts = async () => {
+  const fetchData = async () => {
     try {
-      const response = await fetch("/api/products");
-      const data = await response.json();
-      if (response.status === 200) setProductData(data.products);
+      let response = await axios.get("/api/products");
+      if (response.status === 200) setProductData(response.data.products);
+      response = await axios.get("/api/categories");
+      if (response.status === 200) setCategoriesData(response.data.categories);
     } catch (error) {
-      console.log("went something wrong in fetching product ", error);
+      console.log("Went something wromg in fetching product", error);
     }
   };
-  const fetchCategories = async () => {
-    try {
-      const response = await fetch("/api/categories");
-      const data = await response.json();
-      if (response.status === 200) setCategoriesData(data.categories);
-    } catch (error) {
-      console.log("went something wrong in fetching categories", error);
-    }
-  };
+
   useEffect(() => {
-    fetchProducts();
-    fetchCategories();
+    fetchData();
   }, []);
+
   return (
     <div>
       <ProductsContext.Provider value={{ productData, categoriesData }}>
