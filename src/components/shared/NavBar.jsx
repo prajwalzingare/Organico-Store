@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import "./navbar.css";
 import {
@@ -15,9 +16,12 @@ function NavBar() {
         <div className="nav-container">
           <div className="nav-left">
             <div className="brand">
-              <p className="brand-name">Organico</p>
+              <Link to="/">
+                {" "}
+                <p className="brand-name">Organico</p>
+              </Link>
             </div>
-            <a className="buy-now" href="/">
+            <a className="buy-now" href="/products">
               Buy Now
             </a>
           </div>
