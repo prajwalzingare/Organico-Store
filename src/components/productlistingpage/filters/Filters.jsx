@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./filters.css";
-import { StarIcon } from "assets";
+
 function Filters() {
+  const [displayMobileFilters, setDisplayMobileFilters] = useState(false);
   return (
     <div>
-      <section className="filters">
+      <section
+        className={
+          displayMobileFilters ? "mobile-filters-container" : "filters"
+        }
+      >
         <div className="filters-header">
-          <p>Filters</p>
-          <button className="btn-clear-filter">Clear</button>
+          {displayMobileFilters ? (
+            <button
+              className="btn-link btn-link-primary btn-no-decoration"
+              onClick={() => setDisplayMobileFilters(!displayMobileFilters)}
+            >
+              APPLY
+            </button>
+          ) : (
+            <span>FILTERS</span>
+          )}
+          <button className="btn-clear-filter">CLEAR</button>
         </div>
 
         <hr />
@@ -43,23 +57,23 @@ function Filters() {
           <p className="filter-heading">Rating</p>
           <div>
             <input type="radio" id="star4andAbove" name="rating" />
-            <label htmlFor="star4andAbove" className="filters-label-text icon">
+            <label htmlFor="star4andAbove" className="filters-label-text ">
               {" "}
-              4 <StarIcon className="filters-rating-star" /> and above{" "}
+              4 ⭐️ and above{" "}
             </label>
           </div>
           <div>
             <input type="radio" id="star3andAbove" name="rating" />
             <label htmlFor="star3andAbove" className="filters-label-text">
               {" "}
-              3 <StarIcon className="filters-rating-star" /> and above{" "}
+              3 ⭐️ and above{" "}
             </label>
           </div>
           <div>
             <input type="radio" id="star2andAbove" name="rating" />
             <label htmlFor="star2andAbove" className="filters-label-text">
               {" "}
-              2 <StarIcon className="filters-rating-star" /> and above{" "}
+              2 ⭐️ and above{" "}
             </label>
           </div>
         </div>
@@ -109,6 +123,18 @@ function Filters() {
           </div>
         </div>
       </section>
+
+      <div className="mobile-filter-panel">
+        <div
+          className="mobile-filter-header"
+          onClick={() => setDisplayMobileFilters(!displayMobileFilters)}
+        >
+          FILTERS
+        </div>
+        <div>
+          <button className="btn-clear-filter">CLEAR</button>
+        </div>
+      </div>
     </div>
   );
 }
