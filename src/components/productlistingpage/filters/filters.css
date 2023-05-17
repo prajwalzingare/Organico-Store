@@ -11,7 +11,7 @@
 .filters-header {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 0.75rem;
+  margin: 0.75rem 0rem;
 }
 
 .filters-header p {
@@ -44,7 +44,43 @@
   color: var(--black-color);
   padding-left: 5px;
 }
-.filters-label-text .filters-rating-star {
-  font-size: 1.2rem;
-  color: yellow;
+
+/* mobile filter desighn  */
+.mobile-filter-panel {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 2.5rem;
+  align-items: center;
+  box-shadow: 0px 0px 5px var(--boxshadow-color);
+  z-index: 7;
+  background-color: var(--white-color);
+}
+.mobile-filter-panel > .mobile-filter-header {
+  cursor: pointer;
+}
+
+.mobile-filter-panel {
+  display: none;
+}
+/* //media queries */
+@media only screen and (max-width: 768px) {
+  .filters {
+    display: none;
+  }
+  .mobile-filter-panel {
+    display: flex;
+  }
+  .mobile-filters-container {
+    background-color: white;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 8;
+  }
 }
