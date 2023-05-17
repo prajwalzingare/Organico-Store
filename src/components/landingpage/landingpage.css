@@ -79,7 +79,7 @@
   align-items: center;
 }
 .fp-card .fp-icon {
-  color: #fdcc0d;
+  color: var(--star-color);
   font-size: 1.2rem;
   font-weight: bold;
 }
