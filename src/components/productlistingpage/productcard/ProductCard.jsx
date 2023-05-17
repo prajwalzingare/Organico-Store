@@ -1,24 +1,16 @@
-import { StarIcon } from "assets";
+import { AddShoppingCartIcon, StarIcon } from "assets";
 import React from "react";
+
 import "./productcard.css";
 function ProductCard({ product }) {
-  const {
-    _id,
-    title,
-    description,
-    imgUrl,
-    price,
-    originalPrice,
-    rating,
-    totalReviews,
-    categoryName,
-    isOutOfStock,
-  } = product;
+  const { _id, title, imgUrl, price, originalPrice, rating, totalReviews } =
+    product;
   return (
     <div>
-      <div className="product-card">
+      <div className="product-card" key={_id}>
         <div className="product-card-img-container">
           <img src={imgUrl} alt="" />
+          {/* <FavoriteBorderOutlinedIcon /> */}
         </div>
 
         <div className="product-card-details">
@@ -35,7 +27,10 @@ function ProductCard({ product }) {
           </p>
         </div>
         <div className="product-card-buttons">
-          <button className="card-btn">Add to Cart</button>
+          <button className="card-btn">
+            {" "}
+            <AddShoppingCartIcon className="add-cart-icon" /> Add to Cart
+          </button>
         </div>
       </div>
     </div>
