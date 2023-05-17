@@ -8,6 +8,8 @@
   --white-color: #ffff;
   --black-color: #000000;
   --boxshadow-color: rgba(0, 0, 0, 0.3);
+  --greay-color: #aab0bb;
+  --star-color: #fdcc0d;
 }
 ::-webkit-scrollbar {
   background-color: transparent;
