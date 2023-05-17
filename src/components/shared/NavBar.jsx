@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import "./navbar.css";
 import {
@@ -10,16 +10,17 @@ import {
 } from "assets";
 
 function NavBar() {
+  const navigate = useNavigate();
   return (
     <>
       <nav>
         <div className="nav-container">
           <div className="nav-left">
             <div className="brand">
-              <Link to="/">
-                {" "}
-                <p className="brand-name">Organico</p>
-              </Link>
+              {" "}
+              <p className="brand-name" onClick={() => navigate("/")}>
+                Organico
+              </p>
             </div>
             <a className="buy-now" href="/products">
               Buy Now
