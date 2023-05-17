@@ -1,10 +1,11 @@
 import React from "react";
 import Filters from "../filters/Filters";
-import { useProduct } from "context";
+import { useData } from "context";
 import ProductCard from "../productcard/ProductCard";
 import "./productsection.css";
 function ProductSection() {
-  const { productData } = useProduct();
+  // const { productData } = useProduct();
+  const { processedDataBySort } = useData();
 
   return (
     <div className="filters-and-products">
@@ -12,7 +13,7 @@ function ProductSection() {
         <Filters />
       </div>
       <div className="product-cards">
-        {productData.map((product) => (
+        {processedDataBySort.map((product) => (
           <ProductCard product={product} key={product._id} />
         ))}
       </div>
