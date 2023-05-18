@@ -8,9 +8,17 @@ import {
   ShoppingCartOutlinedIcon,
   SearchOutlinedIcon,
 } from "assets";
+import { useData } from "context";
+import { SEARCH_ITEM } from "constants";
 
 function NavBar() {
+  const { filteredProductState, dispatchFilter } = useData();
   const navigate = useNavigate();
+  const handleSearch = (e) => {
+    dispatchFilter({ type: SEARCH_ITEM, payload: e.target.value });
+    navigate("/products");
+  };
+
   return (
     <>
       <nav>
@@ -33,6 +41,8 @@ function NavBar() {
                 type="text"
                 placeholder="Search for Item"
                 className="nav-search-field"
+                value={filteredProductState.searchText}
+                onChange={handleSearch}
               />
               <button className="btn-no-decoration">
                 <SearchOutlinedIcon className="nav-icon" />
@@ -56,6 +66,7 @@ function NavBar() {
             type="text"
             placeholder="Search for items"
             className="nav-search-field"
+            onChange={handleSearch}
           />
           <button type="submit" className="btn-no-decoration">
             <SearchOutlinedIcon className="nav-icon" />
