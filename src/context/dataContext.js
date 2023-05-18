@@ -11,6 +11,7 @@ const intialState = {
   priceRange: { min: 0, max: 1100 },
   starRating: "",
   selectedCategory: [],
+  isOutOfStock: true,
 };
 
 const DataContext = createContext();
@@ -60,7 +61,15 @@ function DataProvider({ children }) {
         product.title.toUpperCase().includes(state.searchText.toUpperCase())
       );
 
-    //for Category
+    //Filter for Categories
+    if (state.selectedCategory.length > 0)
+      productsData = productsData.filter((product) =>
+        state.selectedCategory.includes(product.categoryName)
+      );
+    //filter for outofstock
+
+    if (!state.isOutOfStock)
+      productsData = productsData.filter((product) => !product.isOutOfStock);
 
     return productsData;
   };
