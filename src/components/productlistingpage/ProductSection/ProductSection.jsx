@@ -5,7 +5,7 @@ import ProductCard from "../productcard/ProductCard";
 import "./productsection.css";
 function ProductSection() {
   // const { productData } = useProduct();
-  const { processedDataBySort } = useData();
+  const { data } = useData();
 
   return (
     <div className="filters-and-products">
@@ -13,7 +13,7 @@ function ProductSection() {
         <Filters />
       </div>
       <div className="product-cards">
-        {processedDataBySort.map((product) => (
+        {data.map((product) => (
           <ProductCard product={product} key={product._id} />
         ))}
       </div>
