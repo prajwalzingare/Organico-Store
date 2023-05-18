@@ -19,7 +19,7 @@ export const products = [
     price: "900",
     originalPrice: "1500",
     categoryName: "Dairy_Substitutes",
-    isOutOfStock: false,
+    isOutOfStock: true,
     isTrending: true,
   },
   {
@@ -111,7 +111,7 @@ export const products = [
     price: "200",
     originalPrice: "1900",
     categoryName: "Tea_Coffee_Replacements",
-    isOutOfStock: false,
+    isOutOfStock: true,
     isTrending: false,
   },
   {
@@ -126,7 +126,7 @@ export const products = [
     price: "99",
     originalPrice: "1000",
     categoryName: "Tea_Coffee_Replacements",
-    isOutOfStock: false,
+    isOutOfStock: true,
     isTrending: false,
   },
   {
@@ -187,7 +187,7 @@ export const products = [
     price: "300",
     originalPrice: "800",
     categoryName: "Nuts_And_Seeds",
-    isOutOfStock: false,
+    isOutOfStock: true,
     isTrending: false,
   },
   {
@@ -293,7 +293,7 @@ export const products = [
     price: "700",
     originalPrice: "900",
     categoryName: "Plastic_Alternatives",
-    isOutOfStock: false,
+    isOutOfStock: true,
     isTrending: false,
   },
   {
