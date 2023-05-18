@@ -7,6 +7,8 @@ import {
   CLEAR_FILTERS,
   PRICE_RANGE,
   SORT_BY_RATING,
+  FILTER_BY_CATEGORY,
+  TOGGLE_STOCK,
 } from "constants";
 
 function Filters() {
@@ -222,13 +224,39 @@ function Filters() {
         <div className="filter-categories">
           <p className="filter-heading"> Categories</p>
           <div>
-            <input type="checkbox" id="dairy-substitutes" />
+            <input
+              type="checkbox"
+              id="dairy-substitutes"
+              value="Dairy_Substitutes"
+              checked={filteredProductState.selectedCategory.includes(
+                "Dairy_Substitutes"
+              )}
+              onChange={(e) =>
+                dispatchFilter({
+                  type: FILTER_BY_CATEGORY,
+                  payload: e.target.value,
+                })
+              }
+            />
             <label htmlFor="dairy-substitutes" className="filters-label-text">
               Dairy Substitutes
             </label>
           </div>
           <div>
-            <input type="checkbox" id="tea-coffee-replacements" />
+            <input
+              type="checkbox"
+              id="tea-coffee-replacements"
+              value="Tea_Coffee_Replacements"
+              checked={filteredProductState.selectedCategory.includes(
+                "Tea_Coffee_Replacements"
+              )}
+              onChange={(e) =>
+                dispatchFilter({
+                  type: FILTER_BY_CATEGORY,
+                  payload: e.target.value,
+                })
+              }
+            />
             <label
               htmlFor="tea-coffee-replacements"
               className="filters-label-text"
@@ -237,13 +265,39 @@ function Filters() {
             </label>
           </div>
           <div>
-            <input type="checkbox" id="nutsandseeds" />
+            <input
+              type="checkbox"
+              id="nutsandseeds"
+              value="Nuts_And_Seeds"
+              checked={filteredProductState.selectedCategory.includes(
+                "Nuts_And_Seeds"
+              )}
+              onChange={(e) =>
+                dispatchFilter({
+                  type: FILTER_BY_CATEGORY,
+                  payload: e.target.value,
+                })
+              }
+            />
             <label htmlFor="nutsandseeds" className="filters-label-text">
               Nuts Seeds and Dry Fruits
             </label>
           </div>
           <div>
-            <input type="checkbox" id="plastic-alternatives" />
+            <input
+              type="checkbox"
+              id="plastic-alternatives"
+              value="Plastic_Alternatives"
+              checked={filteredProductState.selectedCategory.includes(
+                "Plastic_Alternatives"
+              )}
+              onChange={(e) =>
+                dispatchFilter({
+                  type: FILTER_BY_CATEGORY,
+                  payload: e.target.value,
+                })
+              }
+            />
             <label
               htmlFor="plastic-alternatives"
               className="filters-label-text"
@@ -255,8 +309,14 @@ function Filters() {
         {/* filter include outofstock  */}
         <hr />
         <div className="filter-includeoutofstock">
+          <span className="filter-heading">OTHER</span>
           <div>
-            <input type="checkbox" id="outofstock" />
+            <input
+              type="checkbox"
+              id="outofstock"
+              checked={filteredProductState.isOutOfStock}
+              onChange={() => dispatchFilter({ type: TOGGLE_STOCK })}
+            />
             <label htmlFor="outofstock" className="filters-label-text">
               Include Out Of Stock
             </label>
