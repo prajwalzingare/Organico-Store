@@ -6,9 +6,11 @@ import { reducer } from "reducer";
 import { useProduct } from "./productContext";
 
 const intialState = {
+  searchText: "",
   sortBy: "",
   priceRange: { min: 0, max: 1100 },
   starRating: "",
+  selectedCategory: [],
 };
 
 const DataContext = createContext();
@@ -52,6 +54,13 @@ function DataProvider({ children }) {
       productsData = productsData.filter((product) => product.rating >= "3");
     else if (state.starRating === "star2-above")
       productsData = productsData.filter((product) => product.rating >= "2");
+    //for serch the Item
+    if (state.searchText.length > 0)
+      productsData = productsData.filter((product) =>
+        product.title.toUpperCase().includes(state.searchText.toUpperCase())
+      );
+
+    //for Category
 
     return productsData;
   };
