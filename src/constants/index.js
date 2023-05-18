@@ -4,4 +4,6 @@ export {
   PRICE_RANGE,
   SORT_BY_RATING,
   SEARCH_ITEM,
+  FILTER_BY_CATEGORY,
+  TOGGLE_STOCK,
 } from "./constant";
