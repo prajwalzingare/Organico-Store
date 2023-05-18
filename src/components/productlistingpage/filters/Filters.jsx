@@ -6,9 +6,7 @@ import {
   SORT_PRODUCTS,
   CLEAR_FILTERS,
   PRICE_RANGE,
-  STAR4_ABOVE,
-  STAR3_ABOVE,
-  STAR2_ABOVE,
+  SORT_BY_RATING,
 } from "constants";
 
 function Filters() {
@@ -166,7 +164,10 @@ function Filters() {
               className="filter-input"
               checked={filteredProductState.starRating === "star4-above"}
               onChange={(e) =>
-                dispatchFilter({ type: STAR4_ABOVE, payload: e.target.value })
+                dispatchFilter({
+                  type: SORT_BY_RATING,
+                  payload: e.target.value,
+                })
               }
             />
             <label htmlFor="star4andAbove" className="filters-label-text ">
@@ -183,7 +184,10 @@ function Filters() {
               className="filter-input"
               checked={filteredProductState.starRating === "star3-above"}
               onChange={(e) =>
-                dispatchFilter({ type: STAR3_ABOVE, payload: e.target.value })
+                dispatchFilter({
+                  type: SORT_BY_RATING,
+                  payload: e.target.value,
+                })
               }
             />
             <label htmlFor="star3andAbove" className="filters-label-text">
@@ -200,7 +204,10 @@ function Filters() {
               className="filter-input"
               checked={filteredProductState.starRating === "star2-above"}
               onChange={(e) =>
-                dispatchFilter({ type: STAR2_ABOVE, payload: e.target.value })
+                dispatchFilter({
+                  type: SORT_BY_RATING,
+                  payload: e.target.value,
+                })
               }
             />
             <label htmlFor="star2andAbove" className="filters-label-text">
@@ -221,7 +228,7 @@ function Filters() {
             </label>
           </div>
           <div>
-            <input type="checkbox" id="tea_coffee_replacements" />
+            <input type="checkbox" id="tea-coffee-replacements" />
             <label
               htmlFor="tea-coffee-replacements"
               className="filters-label-text"
