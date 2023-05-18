@@ -4,31 +4,41 @@ import { useContext } from "react";
 import { createContext } from "react";
 import { reducer } from "reducer";
 import { useProduct } from "./productContext";
-const DataContext = createContext();
-function DataProvider({ children }) {
-  const { productData } = useProduct();
 
-  const intialState = {
-    sortByPrice: null,
+const intialState = {
+  sortByPrice: "",
+};
+
+const DataContext = createContext();
+
+function DataProvider({ children }) {
+  let { productData } = useProduct();
+
+  const getData = (state) => {
+    if (state.sortByPrice === "hightolow")
+      productData = productData.sort(function (a, b) {
+        return b.price - a.price;
+      });
+    else if (state.sortByPrice === "lowtohigh")
+      productData = productData.sort(function (a, b) {
+        return a.price - b.price;
+      });
+    return productData;
   };
 
   const [filteredProductState, dispatchFilter] = useReducer(
     reducer,
     intialState
   );
-  //for sort
-  const processedDataBySort = productData.sort((a, b) =>
-    filteredProductState.sortByPrice === "hightolow"
-      ? b.price - a.price
-      : filteredProductState.sortByPrice === "lowtohigh"
-      ? a.price - b.price
-      : productData
-  );
 
   return (
     <div>
       <DataContext.Provider
-        value={{ filteredProductState, dispatchFilter, processedDataBySort }}
+        value={{
+          filteredProductState,
+          dispatchFilter,
+          data: getData(filteredProductState),
+        }}
       >
         {children}
       </DataContext.Provider>
