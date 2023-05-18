@@ -76,6 +76,11 @@
 .mobile-filter-panel {
   display: none;
 }
+
+.filter-slider-label {
+  display: flex;
+  justify-content: space-between;
+}
 /* //media queries */
 @media only screen and (max-width: 768px) {
   .filters {
