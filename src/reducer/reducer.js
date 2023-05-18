@@ -4,6 +4,8 @@ import {
   PRICE_RANGE,
   SORT_BY_RATING,
   SEARCH_ITEM,
+  FILTER_BY_CATEGORY,
+  TOGGLE_STOCK,
 } from "constants";
 
 const reducer = (state, action) => {
@@ -16,7 +18,16 @@ const reducer = (state, action) => {
       return { ...state, starRating: action.payload };
     case SEARCH_ITEM:
       return { ...state, searchText: action.payload };
+    case FILTER_BY_CATEGORY:
+      const updatedCategory = state.selectedCategory.includes(action.payload)
+        ? state.selectedCategory.filter(
+            (addedCategory) => addedCategory !== action.payload
+          )
+        : [...state.selectedCategory, action.payload];
 
+      return { ...state, selectedCategory: updatedCategory };
+    case TOGGLE_STOCK:
+      return { ...state, isOutOfStock: !state.isOutOfStock };
     case CLEAR_FILTERS:
       return {
         ...state,
@@ -24,6 +35,7 @@ const reducer = (state, action) => {
         priceRange: { min: 0, max: 1110 },
         starRating: "",
         searchText: "",
+        selectedCategory: [],
       };
     default:
       return state;
