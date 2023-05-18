@@ -7,6 +7,8 @@ import { useProduct } from "./productContext";
 
 const intialState = {
   sortBy: "",
+  priceRange: { min: 0, max: 1100 },
+  starRating: "",
 };
 
 const DataContext = createContext();
@@ -16,6 +18,7 @@ function DataProvider({ children }) {
 
   const getData = (state) => {
     let productsData = [...productData];
+    //for sort input
     if (state.sortBy === "hightolow")
       productsData = productsData.sort(function (a, b) {
         return b.price - a.price;
@@ -32,6 +35,23 @@ function DataProvider({ children }) {
       productsData = productsData.sort((a, b) =>
         b.title.localeCompare(a.title)
       );
+    //for price range input
+    if (state.priceRange !== "") {
+      productsData = productsData.filter((product) => {
+        return (
+          product.price >= state.priceRange.min &&
+          product.price <= state.priceRange.max
+        );
+      });
+    }
+
+    //for star Rating input
+    if (state.starRating === "star4-above")
+      productsData = productsData.filter((product) => product.rating >= "4");
+    else if (state.starRating === "star3-above")
+      productsData = productsData.filter((product) => product.rating >= "3");
+    else if (state.starRating === "star2-above")
+      productsData = productsData.filter((product) => product.rating >= "2");
 
     return productsData;
   };
