@@ -6,7 +6,7 @@ import { reducer } from "reducer";
 import { useProduct } from "./productContext";
 
 const intialState = {
-  sortByPrice: "",
+  sortBy: "",
 };
 
 const DataContext = createContext();
@@ -15,15 +15,25 @@ function DataProvider({ children }) {
   let { productData } = useProduct();
 
   const getData = (state) => {
-    if (state.sortByPrice === "hightolow")
-      productData = productData.sort(function (a, b) {
+    let productsData = [...productData];
+    if (state.sortBy === "hightolow")
+      productsData = productsData.sort(function (a, b) {
         return b.price - a.price;
       });
-    else if (state.sortByPrice === "lowtohigh")
-      productData = productData.sort(function (a, b) {
+    else if (state.sortBy === "lowtohigh")
+      productsData = productsData.sort(function (a, b) {
         return a.price - b.price;
       });
-    return productData;
+    else if (state.sortBy === "AtoZ")
+      productsData = productsData.sort((a, b) =>
+        a.title.localeCompare(b.title)
+      );
+    else if (state.sortBy === "ZtoA")
+      productsData = productsData.sort((a, b) =>
+        b.title.localeCompare(a.title)
+      );
+
+    return productsData;
   };
 
   const [filteredProductState, dispatchFilter] = useReducer(

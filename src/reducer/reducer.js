@@ -1,10 +1,11 @@
-import { PRICE_SORT } from "constants";
+import { SORT_PRODUCTS, CLEAR_FILTERS } from "constants";
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case PRICE_SORT:
-      return { ...state, sortByPrice: action.payload };
-
+    case SORT_PRODUCTS:
+      return { ...state, sortBy: action.payload };
+    case CLEAR_FILTERS:
+      return { ...state, sortBy: "" };
     default:
       return state;
   }

@@ -1,1 +1,1 @@
-export { PRICE_SORT } from "./constant";
+export { SORT_PRODUCTS, CLEAR_FILTERS } from "./constant";

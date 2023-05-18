@@ -1,4 +1,5 @@
 //filters constant
 
-const PRICE_SORT = "PRICE_SORT";
-export { PRICE_SORT };
+const SORT_PRODUCTS = "SORT_PRODUCTS";
+const CLEAR_FILTERS = "CLEAR_FILTERS";
+export { SORT_PRODUCTS, CLEAR_FILTERS };
