@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import "./filters.css";
 import { useData } from "context";
 //constants from constant file for filter state
-import { SORT_PRODUCTS, CLEAR_FILTERS } from "constants";
+import {
+  SORT_PRODUCTS,
+  CLEAR_FILTERS,
+  PRICE_RANGE,
+  STAR4_ABOVE,
+  STAR3_ABOVE,
+  STAR2_ABOVE,
+} from "constants";
 
 function Filters() {
   //for toggling filters class for mobile
@@ -121,7 +128,30 @@ function Filters() {
         {/* for price Range  */}
         <div className="filter-price-range">
           <p className="filter-heading"> Price Range</p>
-          <input type="range" className="filter-input" />
+          <div className="filter-slider-label">
+            <p className="text-secondary-color">0</p>
+            <p className="text-secondary-color">500</p>
+            <p className="text-secondary-color">1100</p>
+          </div>
+          <input
+            type="range"
+            name="rangeInput"
+            value={filteredProductState.priceRange.max}
+            min={filteredProductState.priceRange.min}
+            max="1110"
+            step="100"
+            className="filter-input"
+            onChange={(e) =>
+              dispatchFilter({
+                type: PRICE_RANGE,
+                payload: {
+                  ...filteredProductState.priceRange,
+                  max: parseInt(e.target.value),
+                },
+              })
+            }
+          />
+          {console.log(filteredProductState.priceRange.max)}
         </div>
         <hr />
         {/* filter for Rating  */}
@@ -131,8 +161,13 @@ function Filters() {
             <input
               type="radio"
               id="star4andAbove"
+              value="star4-above"
               name="rating"
               className="filter-input"
+              checked={filteredProductState.starRating === "star4-above"}
+              onChange={(e) =>
+                dispatchFilter({ type: STAR4_ABOVE, payload: e.target.value })
+              }
             />
             <label htmlFor="star4andAbove" className="filters-label-text ">
               {" "}
@@ -143,8 +178,13 @@ function Filters() {
             <input
               type="radio"
               id="star3andAbove"
+              value="star3-above"
               name="rating"
               className="filter-input"
+              checked={filteredProductState.starRating === "star3-above"}
+              onChange={(e) =>
+                dispatchFilter({ type: STAR3_ABOVE, payload: e.target.value })
+              }
             />
             <label htmlFor="star3andAbove" className="filters-label-text">
               {" "}
@@ -155,8 +195,13 @@ function Filters() {
             <input
               type="radio"
               id="star2andAbove"
+              value="star2-above"
               name="rating"
               className="filter-input"
+              checked={filteredProductState.starRating === "star2-above"}
+              onChange={(e) =>
+                dispatchFilter({ type: STAR2_ABOVE, payload: e.target.value })
+              }
             />
             <label htmlFor="star2andAbove" className="filters-label-text">
               {" "}
@@ -220,7 +265,12 @@ function Filters() {
           FILTERS
         </div>
         <div>
-          <button className="btn-clear-filter">CLEAR</button>
+          <button
+            className="btn-clear-filter"
+            onClick={() => dispatchFilter({ type: CLEAR_FILTERS })}
+          >
+            CLEAR
+          </button>
         </div>
       </div>
     </div>
