@@ -20,8 +20,9 @@ function DataProvider({ children }) {
   let { productData } = useProduct();
 
   const getData = (state) => {
+    //Copy of original Array
     let productsData = [...productData];
-    //for sort input
+    //Filters For Sorting
     if (state.sortBy === "hightolow")
       productsData = productsData.sort(function (a, b) {
         return b.price - a.price;
@@ -38,7 +39,7 @@ function DataProvider({ children }) {
       productsData = productsData.sort((a, b) =>
         b.title.localeCompare(a.title)
       );
-    //for price range input
+    // Filters for price range input
     if (state.priceRange !== "") {
       productsData = productsData.filter((product) => {
         return (
@@ -48,26 +49,27 @@ function DataProvider({ children }) {
       });
     }
 
-    //for star Rating input
+    //Filters for star Rating input
     if (state.starRating === "star4-above")
       productsData = productsData.filter((product) => product.rating >= "4");
     else if (state.starRating === "star3-above")
       productsData = productsData.filter((product) => product.rating >= "3");
     else if (state.starRating === "star2-above")
       productsData = productsData.filter((product) => product.rating >= "2");
-    //for serch the Item
+
+    //Filters for serch the Item
     if (state.searchText.length > 0)
       productsData = productsData.filter((product) =>
         product.title.toUpperCase().includes(state.searchText.toUpperCase())
       );
 
-    //Filter for Categories
+    //Filters for Categories
     if (state.selectedCategory.length > 0)
       productsData = productsData.filter((product) =>
         state.selectedCategory.includes(product.categoryName)
       );
-    //filter for outofstock
 
+    //filter for outofstock
     if (!state.isOutOfStock)
       productsData = productsData.filter((product) => !product.isOutOfStock);
 

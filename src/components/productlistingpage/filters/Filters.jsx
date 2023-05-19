@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./filters.css";
 import { useData } from "context";
+
 //constants from constant file for filter state
 import {
   SORT_PRODUCTS,
@@ -44,7 +45,7 @@ function Filters() {
         </div>
 
         <hr />
-        {/* for sort filter  */}
+        {/*Filters For Sort by Price  */}
         <div className="filter-price">
           <p className="filter-heading">Sort</p>
           <div>
@@ -84,7 +85,7 @@ function Filters() {
           </div>
         </div>
         <hr />
-        {/* filter by Alphabetically  */}
+        {/* Filters for Sort by Alphabetically  */}
         <div className="filter-alphabetically">
           <p className="filter-heading">Sort Alphabetically</p>
           <div>
@@ -125,7 +126,7 @@ function Filters() {
         </div>
 
         <hr />
-        {/* for price Range  */}
+        {/*Filters for price Range  */}
         <div className="filter-price-range">
           <p className="filter-heading"> Price Range</p>
           <div className="filter-slider-label">
@@ -154,7 +155,7 @@ function Filters() {
           {console.log(filteredProductState.priceRange.max)}
         </div>
         <hr />
-        {/* filter for Rating  */}
+        {/* filters for Rating  */}
         <div className="filter-rating">
           <p className="filter-heading">Rating</p>
           <div>
@@ -219,7 +220,7 @@ function Filters() {
           </div>
         </div>
 
-        {/* filter for Categories  */}
+        {/* filters for Categories  */}
         <hr />
         <div className="filter-categories">
           <p className="filter-heading"> Categories</p>
@@ -323,7 +324,7 @@ function Filters() {
           </div>
         </div>
       </section>
-
+      {/* Mobile filter panel  */}
       <div className="mobile-filter-panel">
         <div
           className="mobile-filter-header"
