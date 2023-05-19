@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import "./navbar.css";
 import {
@@ -30,9 +30,9 @@ function NavBar() {
                 Organico
               </p>
             </div>
-            <a className="buy-now" href="/products">
+            <Link className="buy-now" to="/products">
               Buy Now
-            </a>
+            </Link>
           </div>
 
           <div className="nav-right">
