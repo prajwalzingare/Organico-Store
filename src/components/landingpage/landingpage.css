@@ -19,7 +19,8 @@
   gap: 10px;
   justify-content: center;
 }
-.featured-card {
+.featured-card,
+.fp-card {
   align-items: center;
   width: 250px;
   padding: 9px;
@@ -53,13 +54,35 @@
   font-size: 1.5rem;
   margin-bottom: 5px;
 }
-.featured-card-description {
+.featured-card-description,
+.fp-description {
   margin-top: 10px;
   line-height: 1.3rem;
   font-weight: 600;
   font-size: 0.9rem;
 }
 
+/* fetured product cards */
+
+.fp-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.04);
+}
+.fp-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fp-rating {
+  display: flex;
+  align-items: center;
+}
+.fp-card .fp-icon {
+  color: var(--star-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 @media screen and (max-width: 768px) {
   .heading-3 {
     font-size: 1.9rem;

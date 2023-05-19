@@ -2,8 +2,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Libre Baskerville";
 }
 :root {
   --primary-color: #438967;
   --white-color: #ffff;
+  --black-color: #000000;
+  --boxshadow-color: rgba(0, 0, 0, 0.3);
+  --greay-color: #aab0bb;
+  --star-color: #fdcc0d;
+}
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 1rem;
 }

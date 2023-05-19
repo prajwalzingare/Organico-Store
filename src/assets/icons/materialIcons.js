@@ -8,6 +8,9 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
+import StarIcon from "@mui/icons-material/Star";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 export {
   PermIdentityOutlinedIcon,
   FavoriteBorderIcon,
@@ -17,4 +20,7 @@ export {
   TwitterIcon,
   LinkedInIcon,
   InstagramIcon,
+  StarIcon,
+  AddShoppingCartIcon,
+  FavoriteBorderOutlinedIcon,
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 // import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import "./navbar.css";
 import {
@@ -7,17 +8,29 @@ import {
   ShoppingCartOutlinedIcon,
   SearchOutlinedIcon,
 } from "assets";
+import { useData } from "context";
+import { SEARCH_ITEM } from "constants";
 
 function NavBar() {
+  const { filteredProductState, dispatchFilter } = useData();
+  const navigate = useNavigate();
+  const handleSearch = (e) => {
+    dispatchFilter({ type: SEARCH_ITEM, payload: e.target.value });
+    navigate("/products");
+  };
+
   return (
     <>
       <nav>
         <div className="nav-container">
           <div className="nav-left">
             <div className="brand">
-              <p className="brand-name">Organico</p>
+              {" "}
+              <p className="brand-name" onClick={() => navigate("/")}>
+                Organico
+              </p>
             </div>
-            <a className="buy-now" href="/">
+            <a className="buy-now" href="/products">
               Buy Now
             </a>
           </div>
@@ -28,6 +41,8 @@ function NavBar() {
                 type="text"
                 placeholder="Search for Item"
                 className="nav-search-field"
+                value={filteredProductState.searchText}
+                onChange={handleSearch}
               />
               <button className="btn-no-decoration">
                 <SearchOutlinedIcon className="nav-icon" />
@@ -51,6 +66,7 @@ function NavBar() {
             type="text"
             placeholder="Search for items"
             className="nav-search-field"
+            onChange={handleSearch}
           />
           <button type="submit" className="btn-no-decoration">
             <SearchOutlinedIcon className="nav-icon" />

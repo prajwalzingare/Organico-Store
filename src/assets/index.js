@@ -7,4 +7,7 @@ export {
   TwitterIcon,
   LinkedInIcon,
   InstagramIcon,
+  StarIcon,
+  AddShoppingCartIcon,
+  FavoriteBorderOutlinedIcon,
 } from "./icons/materialIcons";
