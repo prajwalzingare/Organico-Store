@@ -1,31 +1,42 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import Carousal from "./carausal/Carousal";
 import "./landingpage.css";
-import { useProduct } from "context";
+import { useData, useProduct } from "context";
 import { StarIcon } from "assets";
+import { FILTER_BY_CATEGORY } from "constants";
 
 function LandingPage() {
   const { productData, categoriesData } = useProduct();
-
+  const { dispatchFilter } = useData();
   const feturedProduct = productData
     .filter((item) => item.rating === "5")
     .slice(0, 4);
-
+  const navigate = useNavigate();
   return (
     <div>
       <div className="middle-container">
         <div>
           <Carousal />
         </div>
-        {/* cards */}
+        {/*Our Featured Collections card */}
         <div className="landingpage-cards-container">
           <h3 className="heading-3">Our Featured Collections</h3>
           <div className="landingpage-cards">
             {categoriesData?.map((item) => {
-              const { title, imgUrl, content } = item;
+              const { title, imgUrl, content, categoryName } = item;
+
               return (
-                <div className="featured-card">
+                <div
+                  className="featured-card"
+                  onClick={() => {
+                    dispatchFilter({
+                      type: FILTER_BY_CATEGORY,
+                      payload: categoryName,
+                    });
+                    navigate("/products");
+                  }}
+                >
                   <div className="featured-card-image">
                     <img src={imgUrl} alt={title} />
                   </div>
