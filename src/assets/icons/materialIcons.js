@@ -11,6 +11,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import StarIcon from "@mui/icons-material/Star";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import PaymentsIcon from "@mui/icons-material/Payments";
+import VerifiedIcon from "@mui/icons-material/Verified";
 export {
   PermIdentityOutlinedIcon,
   FavoriteBorderIcon,
@@ -23,4 +27,7 @@ export {
   StarIcon,
   AddShoppingCartIcon,
   FavoriteBorderOutlinedIcon,
+  LocalShippingIcon,
+  PaymentsIcon,
+  VerifiedIcon,
 };

@@ -10,4 +10,7 @@ export {
   StarIcon,
   AddShoppingCartIcon,
   FavoriteBorderOutlinedIcon,
+  LocalShippingIcon,
+  PaymentsIcon,
+  VerifiedIcon,
 } from "./icons/materialIcons";
