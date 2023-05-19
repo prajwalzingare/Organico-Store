@@ -28,6 +28,7 @@ function LandingPage() {
 
               return (
                 <div
+                  key={title}
                   className="featured-card"
                   onClick={() => {
                     dispatchFilter({
@@ -54,9 +55,10 @@ function LandingPage() {
           <h3 className="heading-3">Featured Product</h3>
           <div className="landingpage-cards">
             {feturedProduct?.map((item) => {
-              const { title, imgUrl, description, rating, totalReviews } = item;
+              const { _id, title, imgUrl, description, rating, totalReviews } =
+                item;
               return (
-                <div className="fp-card">
+                <div className="fp-card" key={_id}>
                   <div className="featured-card-image">
                     <img src={imgUrl} alt={title} />
                   </div>
