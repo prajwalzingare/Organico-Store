@@ -4,7 +4,7 @@ import ProductSection from "./ProductSection/ProductSection";
 
 function ProductListingPage() {
   return (
-    <div className="middle-content">
+    <div className="flex-grow">
       <ProductSection />
     </div>
   );
