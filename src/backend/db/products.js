@@ -8,7 +8,7 @@ import { v4 as uuid } from "uuid";
 export const products = [
   //Dairy_Substitutes
   {
-    _id: uuid(),
+    _id: "e9ee4987-c91c-4499-9ec2-3294299cc7b8",
     title: "Coconut Milk Powder 100% Vegan & Pure",
     description:
       "The Ultimate Dairy Substitute for Your Health Transformation Journey!No Added Sugar or Flavour | Maltodextrin-Free.",
@@ -23,7 +23,7 @@ export const products = [
     isTrending: true,
   },
   {
-    _id: uuid(),
+    _id: "8902e2a8-3eff-41af-a88d-21b268f579c3",
     title: "Cacao Powder-Raw & Organic ",
     description:
       "All time favourite for Home-made, Dairy-free Chocolate Lovers! Healthier substitute for commonly used cocoa powder. Contains more calcium than dairy milk!",
@@ -38,7 +38,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "09701fc7-a1ea-4847-97f2-b00433d0f81b",
     title: "Cacao Nibs-No Additives ",
     description:
       "Everyone’s favorite, healthiest & dairy-free alternative to sweetened chocolate chips! Packed with dense nutrition, this chocolaty superfood has a crunchy texture and intense natural cacao flavor & aroma to help you satisfy your choco cravings.",
@@ -53,7 +53,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "afae4222-8b70-4ef6-8349-ef63957ff2f8",
     title: "Pintola Almond Butter",
     description:
       "A perfect alternative to commonly used dairy butter with 100% Almonds & Nothing Else!",
@@ -68,7 +68,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "2d4422c4-e305-4cd5-b136-a5146c8c1223",
     title: "Pintola Peanut Butter Creamy",
     description:
       "A perfect alternative to commonly used dairy butter with 100% Peanuts & Nothing Else!",
@@ -85,7 +85,7 @@ export const products = [
 
   //Tea_Coffee_Replacements
   {
-    _id: uuid(),
+    _id: "e601297d-3b90-4be8-939a-cd5e7cb0d357",
     title: "No Coffee Powder Prepared using Chickpeas",
     description:
       "A perfect substitute for Caffeinated Coffee that resembles any other coffee in Taste & Aroma. Healthy & Easy to prepare and magical for those who wish to give up Tea or Coffee addiction",
@@ -100,7 +100,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "dd5f50ee-31bf-4e45-bd62-e93559e17069",
     title: "Chamomile Tea",
     description:
       "The healthiest alternative to easily give up Tea or Coffee addiction! Best for mental relaxation & menstrual pain relief.",
@@ -115,7 +115,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "95e6bfc1-af5d-4374-914f-cf9e99d2f20d",
     title: "Lemongrass Rose Tea without Stevia",
     description:
       "The healthiest alternative to easily give up Tea or Coffee addiction to help you begin your Health Transformation journey! Ensures sound sleep and good digestion",
@@ -130,7 +130,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "51119d77-6f36-4780-8df1-d37ca0a0615c",
     title: "Tulsi Moringa Tea-Organic",
     description:
       "The healthiest alternative to easily give up Tea or Coffee addiction to help you begin your Health Transformation journey! Prefect for relieving cough, cold, fever, stress & overcoming tiedness.",
@@ -145,7 +145,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "033ede86-9104-473b-8f66-042ed4acfd8c",
     title: "Curry Thyme Tea",
     description:
       "The healthiest alternative to easily give up Tea or Coffee addiction to help you begin your Health Transformation journey! Aids digestion, helps in detoxification and relieves stress.",
@@ -161,7 +161,7 @@ export const products = [
   },
   //Nuts_And_Seeds
   {
-    _id: uuid(),
+    _id: "bbc4fbd9-b5e5-4fed-aeaf-f78a4792005a",
     title: "Flax Seeds",
     description:
       "A plant-based source of healthy fats without any chemical preservatives. Purely organic & raw seeds grown naturally.",
@@ -176,7 +176,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "58bd1d47-121e-4d96-b9c2-8582cb719cb3",
     title: "Sunflower Seeds",
     description:
       "A plant-based source of healthy fats without any chemical preservatives. Purely organic & raw seeds grown naturally. The finest quality seeds are packed hygienically after hand-picking.",
@@ -191,7 +191,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "41a30ecc-b768-4697-b6c1-4bd8df0aacb8",
     title: "Cashew Nuts Whole",
     description:
       "A natural & authentically procured plant-based source of healthy fats! Filled with Mother Nature’s love & essential nutrition, these energy bites are delicious & handpicked carefully before packing.",
@@ -206,7 +206,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "c10c593a-1d1a-48bf-b0ed-1ec5c688e5c1",
     title: "Raw Kashmiri Badaam Giri ",
     description:
       "A naturally grown & authentically procured plant-based source of healthy fats cultivated organically in the Kashmir region of India. High in nutrition, these nuts are fresh & delectable for use in satvic dishes.",
@@ -221,7 +221,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "f40be9a8-621e-44df-ad2e-ed86b6e6229e",
     title: "Raisins Golden - Dried Grapes",
     description:
       "Superior-Quality Mother Nature’s Candy in its Naturally Pure & Unsweetened form! These soft & tiny delectable pieces are loaded with dense nutrition & energy",
@@ -237,7 +237,7 @@ export const products = [
   },
   //Plastic_Alternatives
   {
-    _id: uuid(),
+    _id: "943b7f7d-7503-4309-a7a5-dbab8a1442d8",
     title: "Stainless Steel Straws",
     description:
       "A perfect Nature-friendly alternative to Plastic Straws! It helps you enjoy a guilt-free conscious by saying NO to single-use plastic and doing your bit to reduce the plastic waste burden from Mother Earth.",
@@ -252,7 +252,7 @@ export const products = [
     isTrending: true,
   },
   {
-    _id: uuid(),
+    _id: "e9594141-1249-4a5e-a036-d7b770675c4e",
     title: "Neem Wood Comb - 100% Pure",
     description:
       "A Natural Repair for Your Hair! Being plant-based, these wooden combs biodegrade entirely. Their soft edges are gentle for hair, and these combs are excellent for hair health due to their beneficial properties.",
@@ -267,7 +267,7 @@ export const products = [
     isTrending: true,
   },
   {
-    _id: uuid(),
+    _id: "1fe452c5-8ce8-44b9-b3bd-810b05004287",
     title: "Soap Case - Dual Holder Handmade",
     description:
       "A perfect, space-saving, eco-friendly & biodegradable alternative to plastic soap cases! It comes up with a double holder to accommodate two bars simultaneously. Do your bit to reduce the plastic waste burden from Mother Earth by consciously choosing an environment-safe soap dish.",
@@ -282,7 +282,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "8893070d-d786-4a78-9f44-0460eb0cff1f",
     title: "Grocery Bag",
     description:
       "Premium-Quality cotton bag with huge carrying capacity to help you say NO to multiple plastic bags while buying fruits & vegetables, leading to considerable plastic savings.",
@@ -297,7 +297,7 @@ export const products = [
     isTrending: false,
   },
   {
-    _id: uuid(),
+    _id: "33f9f40a-519e-413b-874a-59f7e9195485",
     title: "Toothbrushes - Set of 4 ",
     description:
       "Perfectly Designed for Natural Dental Care! 100% Plastic-free & Plant-based brushes with completely biodegradable bristles made up of corn starch, bamboo fiber & castor oil. The best alternative to commonly used plastic toothbrushes!",
