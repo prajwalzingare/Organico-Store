@@ -95,7 +95,7 @@ export const products = [
     originalPrice: "1900",
     categoryName: "Tea_Coffee_Replacements",
     isOutOfStock: false,
-    isTrending: false,
+    isTrending: true,
   },
   {
     _id: "dd5f50ee-31bf-4e45-bd62-e93559e17069",
@@ -171,7 +171,7 @@ export const products = [
     originalPrice: "900",
     categoryName: "Nuts_And_Seeds",
     isOutOfStock: false,
-    isTrending: false,
+    isTrending: true,
   },
   {
     _id: "58bd1d47-121e-4d96-b9c2-8582cb719cb3",
@@ -201,7 +201,7 @@ export const products = [
     originalPrice: "1500",
     categoryName: "Nuts_And_Seeds",
     isOutOfStock: false,
-    isTrending: false,
+    isTrending: true,
   },
   {
     _id: "c10c593a-1d1a-48bf-b0ed-1ec5c688e5c1",
