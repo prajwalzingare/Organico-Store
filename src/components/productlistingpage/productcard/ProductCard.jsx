@@ -1,10 +1,24 @@
-import { AddShoppingCartIcon, StarIcon } from "assets";
+import {
+  AddShoppingCartIcon,
+  FavoriteBorderOutlinedIcon,
+  StarIcon,
+} from "assets";
+import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./productcard.css";
 function ProductCard({ product }) {
-  const { _id, title, imgUrl, price, originalPrice, rating, totalReviews } =
-    product;
+  const {
+    _id,
+    title,
+    imgUrl,
+    price,
+    originalPrice,
+    rating,
+    totalReviews,
+    isOutOfStock,
+    isTrending,
+  } = product;
   const navigate = useNavigate();
   return (
     <div>
@@ -15,7 +29,13 @@ function ProductCard({ product }) {
       >
         <div className="product-card-img-container">
           <img src={imgUrl} alt="" />
-          {/* <FavoriteBorderOutlinedIcon /> */}
+          {isTrending && <span className="trending-badge">Trending</span>}
+
+          <button className="product-card-wishlist-btn">
+            {" "}
+            <FavoriteBorderOutlinedIcon />
+          </button>
+          <span></span>
         </div>
 
         <div className="product-card-details">
@@ -32,10 +52,17 @@ function ProductCard({ product }) {
           </p>
         </div>
         <div className="product-card-buttons">
-          <button className="card-btn">
-            {" "}
-            <AddShoppingCartIcon className="add-cart-icon" /> Add to Cart
-          </button>
+          {isOutOfStock ? (
+            <button className="card-btn  btn-outOfStock" disabled>
+              <RemoveShoppingCartOutlinedIcon className="add-cart-icon" />
+              Out Of Stock
+            </button>
+          ) : (
+            <button className="card-btn">
+              {" "}
+              <AddShoppingCartIcon className="add-cart-icon" /> Add To Cart
+            </button>
+          )}
         </div>
       </div>
     </div>
