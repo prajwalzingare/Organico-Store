@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import "./navbar.css";
 import {
   PermIdentityOutlinedIcon,
@@ -66,6 +65,7 @@ function NavBar() {
             type="text"
             placeholder="Search for items"
             className="nav-search-field"
+            value={filteredProductState.searchText}
             onChange={handleSearch}
           />
           <button type="submit" className="btn-no-decoration">

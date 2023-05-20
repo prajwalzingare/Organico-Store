@@ -1,13 +1,18 @@
 import { AddShoppingCartIcon, StarIcon } from "assets";
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import "./productcard.css";
 function ProductCard({ product }) {
   const { _id, title, imgUrl, price, originalPrice, rating, totalReviews } =
     product;
+  const navigate = useNavigate();
   return (
     <div>
-      <div className="product-card" key={_id}>
+      <div
+        className="product-card"
+        key={_id}
+        onClick={() => navigate(`/product/${_id}`)}
+      >
         <div className="product-card-img-container">
           <img src={imgUrl} alt="" />
           {/* <FavoriteBorderOutlinedIcon /> */}

@@ -58,7 +58,11 @@ function LandingPage() {
               const { _id, title, imgUrl, description, rating, totalReviews } =
                 item;
               return (
-                <div className="fp-card" key={_id}>
+                <div
+                  className="fp-card"
+                  key={_id}
+                  onClick={() => navigate(`/product/${_id}`)}
+                >
                   <div className="featured-card-image">
                     <img src={imgUrl} alt={title} />
                   </div>
