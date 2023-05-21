@@ -13,4 +13,5 @@ export {
   LocalShippingIcon,
   PaymentsIcon,
   VerifiedIcon,
+  DeleteOutlineOutlinedIcon,
 } from "./icons/materialIcons";
