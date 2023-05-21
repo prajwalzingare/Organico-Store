@@ -6,6 +6,7 @@ import {
   Footer,
   ProductListingPage,
   IndividualProduct,
+  WishList,
 } from "components";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/products" element={<ProductListingPage />} />
         <Route path="/product/:productId" element={<IndividualProduct />} />
+        <Route path="/wishlist" element={<WishList />} />
       </Routes>
       <Footer />
     </div>
