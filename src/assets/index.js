@@ -14,4 +14,6 @@ export {
   PaymentsIcon,
   VerifiedIcon,
   DeleteOutlineOutlinedIcon,
+  RemoveShoppingCartOutlinedIcon,
+  FavoriteIcon,
 } from "./icons/materialIcons";

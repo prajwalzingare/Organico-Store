@@ -16,6 +16,9 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import PaymentsIcon from "@mui/icons-material/Payments";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+
+import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 export {
   PermIdentityOutlinedIcon,
   FavoriteBorderIcon,
@@ -32,4 +35,6 @@ export {
   PaymentsIcon,
   VerifiedIcon,
   DeleteOutlineOutlinedIcon,
+  RemoveShoppingCartOutlinedIcon,
+  FavoriteIcon,
 };
