@@ -8,7 +8,8 @@ import {
   IndividualProduct,
   WishList,
 } from "components";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App body-container ">
@@ -19,6 +20,7 @@ function App() {
         <Route path="/product/:productId" element={<IndividualProduct />} />
         <Route path="/wishlist" element={<WishList />} />
       </Routes>
+      <ToastContainer position="bottom-right" autoClose={700} draggable />
       <Footer />
     </div>
   );
