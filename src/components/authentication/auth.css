@@ -1,0 +1,82 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  height: fit-content;
+}
+.form-container {
+  width: 400px;
+  padding: 15px;
+  box-shadow: 0px 0px 8px var(--boxshadow-color);
+  border-radius: 10px;
+}
+.form-title {
+  font-size: 2rem;
+  margin: 10px 0px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-label {
+  font-size: 1.1rem;
+  margin-right: 15px;
+}
+.form-input {
+  height: 2rem;
+  width: 100%;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 10px;
+  font-size: 15px;
+  margin: 10px 0px;
+}
+.form-actions-login,
+.form-actions-sighnup {
+  display: flex;
+  flex-direction: column;
+}
+.btn-login,
+.btn-sighnup {
+  padding: 7px 0px;
+  margin-top: 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-login:hover,
+.btn-sighnup:hover {
+  background-color: var(--secondary-color);
+}
+.btn-guest-login {
+  padding: 7px 0px;
+  margin-top: 13px;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-guest-login:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.form-switch {
+  display: flex;
+  margin-top: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 300px;
+  }
+}
