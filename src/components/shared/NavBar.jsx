@@ -51,11 +51,13 @@ function NavBar() {
               <div className="nav-icons">
                 <PermIdentityOutlinedIcon className="nav-icon" />
               </div>
-              <div className="nav-icons">
+              <div className="nav-icons" onClick={() => navigate("./wishlist")}>
                 <FavoriteBorderIcon className="nav-icon" />
+                <span className="counter-badge">1</span>
               </div>
               <div className="nav-icons ">
                 <ShoppingCartOutlinedIcon className="nav-icon" />
+                <span className="counter-badge">1</span>
               </div>
             </div>
           </div>

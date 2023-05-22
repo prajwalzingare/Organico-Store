@@ -86,3 +86,39 @@
   color: var(--primary-color);
   outline: 1px solid var(--primary-color);
 }
+
+.btn-outOfStock {
+  cursor: not-allowed;
+}
+.btn-outOfStock.card-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  outline: none;
+  cursor: not-allowed;
+}
+/* //Wishlist Button  */
+.product-card-wishlist-btn {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  padding: 6px;
+  border: none;
+  font-size: 0.1rem;
+  background-color: var(--wishlist-background-color);
+  cursor: pointer;
+}
+.product-card-wishlist-btn svg {
+  color: red;
+}
+
+/* //Trending badge */
+.trending-badge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0rem;
+  border-top-right-radius: 0.4rem;
+  background-color: var(--star-color);
+  padding: 3px 18px;
+}

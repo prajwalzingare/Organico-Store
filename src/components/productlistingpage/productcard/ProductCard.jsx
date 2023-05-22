@@ -1,11 +1,34 @@
-import { AddShoppingCartIcon, StarIcon } from "assets";
 import React from "react";
+import {
+  AddShoppingCartIcon,
+  FavoriteBorderOutlinedIcon,
+  FavoriteIcon,
+  RemoveShoppingCartOutlinedIcon,
+  StarIcon,
+} from "assets";
+
 import { useNavigate } from "react-router-dom";
+
 import "./productcard.css";
+import { useCartAndWishlist } from "hooks";
+
 function ProductCard({ product }) {
-  const { _id, title, imgUrl, price, originalPrice, rating, totalReviews } =
-    product;
+  const {
+    _id,
+    title,
+    imgUrl,
+    price,
+    originalPrice,
+    rating,
+    totalReviews,
+    isOutOfStock,
+    isTrending,
+  } = product;
+
+  const { isFavorite, handleButtonClick } = useCartAndWishlist();
+
   const navigate = useNavigate();
+
   return (
     <div>
       <div
@@ -15,7 +38,20 @@ function ProductCard({ product }) {
       >
         <div className="product-card-img-container">
           <img src={imgUrl} alt="" />
-          {/* <FavoriteBorderOutlinedIcon /> */}
+          {isTrending && <span className="trending-badge">Trending</span>}
+
+          <button
+            className="product-card-wishlist-btn"
+            onClick={(e) => handleButtonClick(e)}
+          >
+            {" "}
+            {isFavorite ? (
+              <FavoriteIcon />
+            ) : (
+              <FavoriteBorderOutlinedIcon style={{ color: "black" }} />
+            )}
+          </button>
+          <span></span>
         </div>
 
         <div className="product-card-details">
@@ -32,10 +68,17 @@ function ProductCard({ product }) {
           </p>
         </div>
         <div className="product-card-buttons">
-          <button className="card-btn">
-            {" "}
-            <AddShoppingCartIcon className="add-cart-icon" /> Add to Cart
-          </button>
+          {isOutOfStock ? (
+            <button className="card-btn  btn-outOfStock" disabled>
+              <RemoveShoppingCartOutlinedIcon className="add-cart-icon" />
+              Out Of Stock
+            </button>
+          ) : (
+            <button className="card-btn">
+              {" "}
+              <AddShoppingCartIcon className="add-cart-icon" /> Add To Cart
+            </button>
+          )}
         </div>
       </div>
     </div>

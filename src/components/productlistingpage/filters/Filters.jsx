@@ -152,7 +152,6 @@ function Filters() {
               })
             }
           />
-          {console.log(filteredProductState.priceRange.max)}
         </div>
         <hr />
         {/* filters for Rating  */}

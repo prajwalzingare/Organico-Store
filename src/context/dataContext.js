@@ -12,13 +12,14 @@ const intialState = {
   starRating: "",
   selectedCategory: [],
   isOutOfStock: true,
+  wishlist: [],
 };
 
 const DataContext = createContext();
 
 function DataProvider({ children }) {
   let { productData } = useProduct();
-
+  //getData function for getting filtered data when filters are applied
   const getData = (state) => {
     //Copy of original Array
     let productsData = [...productData];
