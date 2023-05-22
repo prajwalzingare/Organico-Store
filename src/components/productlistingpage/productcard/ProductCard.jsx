@@ -1,12 +1,17 @@
+import React from "react";
 import {
   AddShoppingCartIcon,
   FavoriteBorderOutlinedIcon,
+  FavoriteIcon,
+  RemoveShoppingCartOutlinedIcon,
   StarIcon,
 } from "assets";
-import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
-import React from "react";
+
 import { useNavigate } from "react-router-dom";
+
 import "./productcard.css";
+import { useCartAndWishlist } from "hooks";
+
 function ProductCard({ product }) {
   const {
     _id,
@@ -19,7 +24,11 @@ function ProductCard({ product }) {
     isOutOfStock,
     isTrending,
   } = product;
+
+  const { isFavorite, handleButtonClick } = useCartAndWishlist();
+
   const navigate = useNavigate();
+
   return (
     <div>
       <div
@@ -31,9 +40,16 @@ function ProductCard({ product }) {
           <img src={imgUrl} alt="" />
           {isTrending && <span className="trending-badge">Trending</span>}
 
-          <button className="product-card-wishlist-btn">
+          <button
+            className="product-card-wishlist-btn"
+            onClick={(e) => handleButtonClick(e)}
+          >
             {" "}
-            <FavoriteBorderOutlinedIcon />
+            {isFavorite ? (
+              <FavoriteIcon />
+            ) : (
+              <FavoriteBorderOutlinedIcon style={{ color: "black" }} />
+            )}
           </button>
           <span></span>
         </div>

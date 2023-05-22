@@ -109,6 +109,9 @@
   background-color: var(--wishlist-background-color);
   cursor: pointer;
 }
+.product-card-wishlist-btn svg {
+  color: red;
+}
 
 /* //Trending badge */
 .trending-badge {
