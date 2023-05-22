@@ -6,6 +6,7 @@
 }
 :root {
   --primary-color: #438967;
+  --secondary-color: #366e53;
   --white-color: #ffff;
   --black-color: #000000;
   --boxshadow-color: rgba(0, 0, 0, 0.3);
