@@ -9,6 +9,8 @@ import {
   WishList,
   LoginForm,
   SignupForm,
+  MockApi,
+  UserProfile,
 } from "components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,9 +20,11 @@ function App() {
     <div className="App body-container ">
       <NavBar />
       <Routes>
+        <Route path="/mock-man" element={<MockApi />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignupForm />} />
+        <Route path="/profile" element={<UserProfile />} />
 
         <Route path="/products" element={<ProductListingPage />} />
         <Route path="/product/:productId" element={<IndividualProduct />} />
