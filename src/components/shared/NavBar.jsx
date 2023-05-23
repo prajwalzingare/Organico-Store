@@ -48,14 +48,14 @@ function NavBar() {
               </button>
             </div>
             <div className="nav-icons-container">
-              <div className="nav-icons">
+              <div className="nav-icons" onClick={() => navigate("/profile")}>
                 <PermIdentityOutlinedIcon className="nav-icon" />
               </div>
-              <div className="nav-icons" onClick={() => navigate("./wishlist")}>
+              <div className="nav-icons" onClick={() => navigate("/wishlist")}>
                 <FavoriteBorderIcon className="nav-icon" />
                 <span className="counter-badge">1</span>
               </div>
-              <div className="nav-icons ">
+              <div className="nav-icons " onClick={() => navigate("/cart")}>
                 <ShoppingCartOutlinedIcon className="nav-icon" />
                 <span className="counter-badge">1</span>
               </div>
