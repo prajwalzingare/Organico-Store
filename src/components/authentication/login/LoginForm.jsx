@@ -9,7 +9,6 @@ function LoginForm() {
   });
 
   const { loginHandler } = useAuth();
-
   const formHandler = (e) => {
     e.preventDefault();
     loginHandler(loginFormData.email, loginFormData.password);
