@@ -1,4 +1,4 @@
-import { useAuth } from "context";
+import { useSignupHandler } from "hooks/useSignupHandler";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function SignupForm() {
     password: "",
     cPassword: "",
   });
-  const { signupHandler } = useAuth();
+  const { signupHandler } = useSignupHandler();
   const sighnupformHandler = (e) => {
     e.preventDefault();
     signupHandler(

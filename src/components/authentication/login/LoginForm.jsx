@@ -1,25 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../auth.css";
-import { useAuth } from "context";
+import { useLoginHandler } from "hooks";
 function LoginForm() {
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
   });
 
-  const { loginHandler } = useAuth();
-  const formHandler = (e) => {
-    e.preventDefault();
-    loginHandler(loginFormData.email, loginFormData.password);
-  };
+  const { loginHandler } = useLoginHandler();
 
   return (
     <div className="flex-grow">
       <div>
         <div className="login-form">
           <h2 className="form-title">Login</h2>
-          <form className="form-container" onSubmit={formHandler}>
+          <form className="form-container">
             <div className="form-group">
               <label htmlFor="email" className="form-label">
                 Email*
@@ -29,6 +25,7 @@ function LoginForm() {
                 id="email"
                 className="form-input"
                 placeholder="Enter your email"
+                value={loginFormData.email}
                 onChange={(e) =>
                   setLoginFormData({
                     ...loginFormData,
@@ -46,6 +43,7 @@ function LoginForm() {
                 id="password"
                 className="form-input"
                 placeholder="Enter your password"
+                value={loginFormData.password}
                 onChange={(e) =>
                   setLoginFormData({
                     ...loginFormData,
@@ -55,10 +53,20 @@ function LoginForm() {
               />
             </div>
             <div className="form-actions-login">
-              <button type="submit" className="btn-login">
+              <button
+                type="submit"
+                className="btn-login"
+                onClick={(e) =>
+                  loginHandler(e, setLoginFormData, loginFormData)
+                }
+              >
                 Login
               </button>
-              <button type="button" className="btn-guest-login">
+              <button
+                type="button"
+                className="btn-guest-login"
+                onClick={(e) => loginHandler(e, setLoginFormData)}
+              >
                 Login as Guest
               </button>
             </div>
