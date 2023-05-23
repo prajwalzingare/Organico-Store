@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../auth.css";
+import { useAuth } from "context";
 function LoginForm() {
+  const [loginFormData, setLoginFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { loginHandler } = useAuth();
+
+  const formHandler = (e) => {
+    e.preventDefault();
+    loginHandler(loginFormData.email, loginFormData.password);
+  };
+
   return (
     <div className="flex-grow">
       <div>
         <div className="login-form">
           <h2 className="form-title">Login</h2>
-          <form className="form-container">
+          <form className="form-container" onSubmit={formHandler}>
             <div className="form-group">
-              <label for="email" className="form-label">
+              <label htmlFor="email" className="form-label">
                 Email*
               </label>
               <input
@@ -17,10 +30,16 @@ function LoginForm() {
                 id="email"
                 className="form-input"
                 placeholder="Enter your email"
+                onChange={(e) =>
+                  setLoginFormData({
+                    ...loginFormData,
+                    email: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="form-group">
-              <label for="password" className="form-label">
+              <label htmlFor="password" className="form-label">
                 Password*
               </label>
               <input
@@ -28,6 +47,12 @@ function LoginForm() {
                 id="password"
                 className="form-input"
                 placeholder="Enter your password"
+                onChange={(e) =>
+                  setLoginFormData({
+                    ...loginFormData,
+                    password: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="form-actions-login">

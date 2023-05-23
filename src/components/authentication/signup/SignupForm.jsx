@@ -1,15 +1,33 @@
-import React from "react";
+import { useAuth } from "context";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function SignupForm() {
+  const [signupFormData, setSignupFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    cPassword: "",
+  });
+  const { signupHandler } = useAuth();
+  const sighnupformHandler = (e) => {
+    e.preventDefault();
+    signupHandler(
+      signupFormData.firstName,
+      signupFormData.lastName,
+      signupFormData.email,
+      signupFormData.password
+    );
+  };
   return (
     <div className="flex-grow">
       <div>
         <div className="login-form">
           <h2 className="form-title">Sign up</h2>
-          <form className="form-container">
+          <form className="form-container" onSubmit={sighnupformHandler}>
             <div className="form-group">
-              <label for="firstname" className="form-label">
+              <label htmlFor="firstname" className="form-label">
                 First Name*
               </label>
               <input
@@ -17,10 +35,16 @@ function SignupForm() {
                 id="firstname"
                 className="form-input"
                 placeholder="Enter First Name"
+                onChange={(e) =>
+                  setSignupFormData({
+                    ...signupFormData,
+                    firstName: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="form-group">
-              <label for="lastname" className="form-label">
+              <label htmlFor="lastname" className="form-label">
                 Last Name*
               </label>
               <input
@@ -28,10 +52,16 @@ function SignupForm() {
                 id="lastname"
                 className="form-input"
                 placeholder="Enter Last Name"
+                onChange={(e) =>
+                  setSignupFormData({
+                    ...signupFormData,
+                    lastName: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="form-group">
-              <label for="email" className="form-label">
+              <label htmlFor="email" className="form-label">
                 Email*
               </label>
               <input
@@ -39,10 +69,16 @@ function SignupForm() {
                 id="email"
                 className="form-input"
                 placeholder="Enter your email"
+                onChange={(e) =>
+                  setSignupFormData({
+                    ...signupFormData,
+                    email: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="form-group">
-              <label for="password" className="form-label">
+              <label htmlFor="password" className="form-label">
                 Password*
               </label>
               <input
@@ -50,17 +86,29 @@ function SignupForm() {
                 id="password"
                 className="form-input"
                 placeholder="Enter your password"
+                onChange={(e) =>
+                  setSignupFormData({
+                    ...signupFormData,
+                    password: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="form-group">
-              <label for="password" className="form-label">
+              <label htmlFor="password" className="form-label">
                 Confirm Password*
               </label>
               <input
-                type="password"
-                id="password"
+                type="cpassword"
+                id="cpassword"
                 className="form-input"
                 placeholder="Enter your password"
+                onChange={(e) =>
+                  setSignupFormData({
+                    ...signupFormData,
+                    cPassword: e.target.value,
+                  })
+                }
               />
             </div>
             <div className="form-actions-sighnup">
