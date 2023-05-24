@@ -19,6 +19,8 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+
+import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
 export {
   PermIdentityOutlinedIcon,
   FavoriteBorderIcon,
@@ -37,4 +39,5 @@ export {
   DeleteOutlineOutlinedIcon,
   RemoveShoppingCartOutlinedIcon,
   FavoriteIcon,
+  ErrorRoundedIcon,
 };
