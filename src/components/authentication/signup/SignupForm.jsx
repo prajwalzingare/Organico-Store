@@ -138,7 +138,7 @@ function SignupForm() {
                 Confirm Password*
               </label>
               <input
-                type="cpassword"
+                type="password"
                 id="cpassword"
                 className="form-input"
                 placeholder="Enter your password"
