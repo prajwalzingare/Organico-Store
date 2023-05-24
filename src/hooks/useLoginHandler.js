@@ -35,6 +35,7 @@ function useLoginHandler() {
       //seting the token and user after login handle function
       setToken(res.encodedToken);
       setCurrentUser(res.foundUser);
+      //navigation to products page
       navigate("/products");
       toast.success("Logged in succesfully");
     } catch (error) {

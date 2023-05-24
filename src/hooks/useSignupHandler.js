@@ -13,13 +13,18 @@ function useSignupHandler() {
       password,
     });
 
-  const signupHandler = async (firstName, lastName, email, password) => {
+  const signupHandler = async (e, formState) => {
+    //for preventing the reload
+    e.preventDefault();
+    const { firstName, lastName, email, password } = formState;
+
     try {
       const {
         status,
         data: { createdUser, encodedToken },
       } = await createUser(firstName, lastName, email, password);
 
+      //seting the new user in local storage
       if (status === 200 || status === 201) {
         localStorage.setItem(
           "loginDetails",
