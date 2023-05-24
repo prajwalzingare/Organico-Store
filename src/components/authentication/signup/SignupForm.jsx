@@ -1,40 +1,11 @@
+import { ErrorRoundedIcon } from "assets";
 import { useSignupHandler } from "hooks/useSignupHandler";
-import React, { useReducer } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function SignupForm() {
-  const { signupHandler } = useSignupHandler();
-
-  //initial state for form
-  const initialFormData = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  };
-
-  //formReducer
-  const formReducer = (state, { type, payload }) => {
-    switch (type) {
-      case "SET_FIRST_NAME":
-        return { ...state, firstName: payload };
-      case "SET_LAST_NAME":
-        return { ...state, lastName: payload };
-      case "SET_EMAIL":
-        return { ...state, email: payload };
-      case "SET_PASSWORD":
-        return { ...state, password: payload };
-      case "SET_CONFIRM_PASSWORD":
-        return { ...state, confirmPassword: payload };
-
-      default:
-        return state;
-    }
-  };
-
-  //REDUCER FUNCTION
-  const [formState, formDispatch] = useReducer(formReducer, initialFormData);
+  const { signupHandler, formDispatch, formState, errorDispatch, errorState } =
+    useSignupHandler();
 
   return (
     <div className="flex-grow">
@@ -51,13 +22,26 @@ function SignupForm() {
                 id="firstname"
                 className="form-input"
                 placeholder="Enter First Name"
+                value={formState.firstName}
                 onChange={(e) =>
                   formDispatch({
                     type: "SET_FIRST_NAME",
                     payload: e.target.value,
                   })
                 }
+                onFocus={() => {
+                  errorDispatch({
+                    type: "SET_FIRSTNAME_ERROR",
+                    payload: "",
+                  });
+                }}
               />
+              {errorState.firstName.length > 0 && (
+                <div className="form-field-error">
+                  <ErrorRoundedIcon />
+                  <p>{errorState.firstName}</p>
+                </div>
+              )}
             </div>
             <div className="form-group">
               <label htmlFor="lastname" className="form-label">
@@ -68,13 +52,26 @@ function SignupForm() {
                 id="lastname"
                 className="form-input"
                 placeholder="Enter Last Name"
+                value={formState.lastName}
                 onChange={(e) =>
                   formDispatch({
                     type: "SET_LAST_NAME",
                     payload: e.target.value,
                   })
                 }
+                onFocus={() => {
+                  errorDispatch({
+                    type: "SET_LASTNAME_ERROR",
+                    payload: "",
+                  });
+                }}
               />
+              {errorState.lastName.length > 0 && (
+                <div className="form-field-error">
+                  <ErrorRoundedIcon />
+                  <p>{errorState.lastName}</p>
+                </div>
+              )}
             </div>
             <div className="form-group">
               <label htmlFor="email" className="form-label">
@@ -85,13 +82,26 @@ function SignupForm() {
                 id="email"
                 className="form-input"
                 placeholder="Enter your email"
+                value={formState.email}
                 onChange={(e) =>
                   formDispatch({
                     type: "SET_EMAIL",
                     payload: e.target.value,
                   })
                 }
+                onFocus={() => {
+                  errorDispatch({
+                    type: "SET_EMAIL_ERROR",
+                    payload: "",
+                  });
+                }}
               />
+              {errorState.email.length > 0 && (
+                <div className="form-field-error">
+                  <ErrorRoundedIcon />
+                  <p>{errorState.email}</p>
+                </div>
+              )}
             </div>
             <div className="form-group">
               <label htmlFor="password" className="form-label">
@@ -102,13 +112,26 @@ function SignupForm() {
                 id="password"
                 className="form-input"
                 placeholder="Enter your password"
+                value={formState.password}
                 onChange={(e) =>
                   formDispatch({
                     type: "SET_PASSWORD",
                     payload: e.target.value,
                   })
                 }
+                onFocus={() => {
+                  errorDispatch({
+                    type: "SET_PASSWORD_ERROR",
+                    payload: "",
+                  });
+                }}
               />
+              {errorState.password.length > 0 && (
+                <div className="form-field-error">
+                  <ErrorRoundedIcon />
+                  <p>{errorState.password}</p>
+                </div>
+              )}
             </div>
             <div className="form-group">
               <label htmlFor="password" className="form-label">
@@ -119,19 +142,32 @@ function SignupForm() {
                 id="cpassword"
                 className="form-input"
                 placeholder="Enter your password"
+                value={formState.confirmPassword}
                 onChange={(e) =>
                   formDispatch({
                     type: "SET_CONFIRM_PASSWORD",
                     payload: e.target.value,
                   })
                 }
+                onFocus={() => {
+                  errorDispatch({
+                    type: "SET_CONFIRM_PASSWORD_ERROR",
+                    payload: "",
+                  });
+                }}
               />
+              {errorState.confirmPassword.length > 0 && (
+                <div className="form-field-error">
+                  <ErrorRoundedIcon />
+                  <p>{errorState.confirmPassword}</p>
+                </div>
+              )}
             </div>
             <div className="form-actions-sighnup">
               <button
                 type="submit"
                 className="btn-sighnup"
-                onClick={(e) => signupHandler(e, formState)}
+                onClick={(e) => signupHandler(e)}
               >
                 Signup
               </button>
