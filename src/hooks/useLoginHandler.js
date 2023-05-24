@@ -37,10 +37,10 @@ function useLoginHandler() {
       setCurrentUser(res.foundUser);
       //navigation to products page
       navigate("/products");
-      toast.success("Logged in succesfully");
+      toast.success("Login successful!");
     } catch (error) {
       console.log("Error in login handler", error);
-      toast.error("error in login");
+      toast.error("Login failed. Please try again.");
     }
   };
   return { loginHandler };
