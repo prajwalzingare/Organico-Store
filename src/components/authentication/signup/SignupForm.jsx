@@ -1,31 +1,47 @@
 import { useSignupHandler } from "hooks/useSignupHandler";
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import { Link } from "react-router-dom";
 
 function SignupForm() {
-  const [signupFormData, setSignupFormData] = useState({
+  const { signupHandler } = useSignupHandler();
+
+  //initial state for form
+  const initialFormData = {
     firstName: "",
     lastName: "",
     email: "",
     password: "",
-    cPassword: "",
-  });
-  const { signupHandler } = useSignupHandler();
-  const sighnupformHandler = (e) => {
-    e.preventDefault();
-    signupHandler(
-      signupFormData.firstName,
-      signupFormData.lastName,
-      signupFormData.email,
-      signupFormData.password
-    );
+    confirmPassword: "",
   };
+
+  //formReducer
+  const formReducer = (state, { type, payload }) => {
+    switch (type) {
+      case "SET_FIRST_NAME":
+        return { ...state, firstName: payload };
+      case "SET_LAST_NAME":
+        return { ...state, lastName: payload };
+      case "SET_EMAIL":
+        return { ...state, email: payload };
+      case "SET_PASSWORD":
+        return { ...state, password: payload };
+      case "SET_CONFIRM_PASSWORD":
+        return { ...state, confirmPassword: payload };
+
+      default:
+        return state;
+    }
+  };
+
+  //REDUCER FUNCTION
+  const [formState, formDispatch] = useReducer(formReducer, initialFormData);
+
   return (
     <div className="flex-grow">
       <div>
         <div className="login-form">
           <h2 className="form-title">Sign up</h2>
-          <form className="form-container" onSubmit={sighnupformHandler}>
+          <form className="form-container">
             <div className="form-group">
               <label htmlFor="firstname" className="form-label">
                 First Name*
@@ -36,9 +52,9 @@ function SignupForm() {
                 className="form-input"
                 placeholder="Enter First Name"
                 onChange={(e) =>
-                  setSignupFormData({
-                    ...signupFormData,
-                    firstName: e.target.value,
+                  formDispatch({
+                    type: "SET_FIRST_NAME",
+                    payload: e.target.value,
                   })
                 }
               />
@@ -53,9 +69,9 @@ function SignupForm() {
                 className="form-input"
                 placeholder="Enter Last Name"
                 onChange={(e) =>
-                  setSignupFormData({
-                    ...signupFormData,
-                    lastName: e.target.value,
+                  formDispatch({
+                    type: "SET_LAST_NAME",
+                    payload: e.target.value,
                   })
                 }
               />
@@ -70,9 +86,9 @@ function SignupForm() {
                 className="form-input"
                 placeholder="Enter your email"
                 onChange={(e) =>
-                  setSignupFormData({
-                    ...signupFormData,
-                    email: e.target.value,
+                  formDispatch({
+                    type: "SET_EMAIL",
+                    payload: e.target.value,
                   })
                 }
               />
@@ -87,9 +103,9 @@ function SignupForm() {
                 className="form-input"
                 placeholder="Enter your password"
                 onChange={(e) =>
-                  setSignupFormData({
-                    ...signupFormData,
-                    password: e.target.value,
+                  formDispatch({
+                    type: "SET_PASSWORD",
+                    payload: e.target.value,
                   })
                 }
               />
@@ -104,15 +120,19 @@ function SignupForm() {
                 className="form-input"
                 placeholder="Enter your password"
                 onChange={(e) =>
-                  setSignupFormData({
-                    ...signupFormData,
-                    cPassword: e.target.value,
+                  formDispatch({
+                    type: "SET_CONFIRM_PASSWORD",
+                    payload: e.target.value,
                   })
                 }
               />
             </div>
             <div className="form-actions-sighnup">
-              <button type="submit" className="btn-sighnup">
+              <button
+                type="submit"
+                className="btn-sighnup"
+                onClick={(e) => signupHandler(e, formState)}
+              >
                 Signup
               </button>
             </div>
