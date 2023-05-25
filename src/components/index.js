@@ -8,3 +8,4 @@ export { LoginForm } from "../components/authentication/login/LoginForm";
 export { SignupForm } from "../components/authentication/signup/SignupForm";
 export { MockApi } from "./mockapi/MockApi";
 export { UserProfile } from "./profile/UserProfile";
+export { PrivateRoute } from "./authentication/privateroute/PrivateRoute";
