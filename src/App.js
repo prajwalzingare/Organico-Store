@@ -11,6 +11,7 @@ import {
   SignupForm,
   MockApi,
   UserProfile,
+  PrivateRoute,
 } from "components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -24,13 +25,14 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignupForm />} />
-        <Route path="/profile" element={<UserProfile />} />
-
         <Route path="/products" element={<ProductListingPage />} />
         <Route path="/product/:productId" element={<IndividualProduct />} />
 
-        {/* this should be in private route  */}
-        <Route path="/wishlist" element={<WishList />} />
+        {/* When the URL matches "/", the <PrivateRoute /> component will be rendered. The <PrivateRoute /> component is responsible for handling private routes. However, it does not render any specific content itself. Instead, it serves as a wrapper component that conditionally renders its child routes based on the authentication status. */}
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="/wishlist" element={<WishList />} />
+          <Route path="/profile" element={<UserProfile />} />
+        </Route>
       </Routes>
       <ToastContainer position="bottom-right" autoClose={700} draggable />
       <Footer />
