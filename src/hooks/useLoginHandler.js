@@ -1,10 +1,12 @@
 import { useAuth } from "context";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { loginService } from "services";
 
 function useLoginHandler() {
   const { setToken, setCurrentUser } = useAuth();
+
+  const location = useLocation();
   const navigate = useNavigate();
   const loginHandler = async (e, setLoginFormData, loginFormData) => {
     //for preventing the reload
@@ -36,7 +38,7 @@ function useLoginHandler() {
       setToken(res.encodedToken);
       setCurrentUser(res.foundUser);
       //navigation to products page
-      navigate("/products");
+      navigate(location?.state?.from?.pathname || "/");
       toast.success("Login successful!");
     } catch (error) {
       console.log("Error in login handler", error);

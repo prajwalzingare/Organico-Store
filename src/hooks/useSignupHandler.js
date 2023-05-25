@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useAuth } from "context";
 import { useReducer } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function useSignupHandler() {
   const { setToken, setCurrentUser } = useAuth();
-
+  const location = useLocation();
+  const navigate = useNavigate();
   //initial state for form
   const initialFormData = {
     firstName: "",
@@ -156,7 +158,7 @@ function useSignupHandler() {
         //seting the token and user after signup handle function
         setCurrentUser(createdUser);
         setToken(encodedToken);
-
+        navigate(location?.state?.from?.pathname || "/");
         toast.success("Congratulations! Signup completed successfully!");
       } catch (error) {
         console.log(error);
