@@ -6,6 +6,7 @@
 }
 :root {
   --primary-color: #438967;
+  --secondary-color: #366e53;
   --white-color: #ffff;
   --black-color: #000000;
   --boxshadow-color: rgba(0, 0, 0, 0.3);
@@ -13,6 +14,7 @@
   --star-color: #fdcc0d;
   --yellow-color: #d5cd27;
   --wishlist-background-color: #f5f5f6;
+  --error-color: #b30000;
 }
 ::-webkit-scrollbar {
   background-color: transparent;
