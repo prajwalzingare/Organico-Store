@@ -1,21 +1,24 @@
 import React from "react";
 import "./wishlist.css";
-import { useProduct } from "context";
+import { useData } from "context";
 import {
   AddShoppingCartIcon,
   DeleteOutlineOutlinedIcon,
   StarIcon,
 } from "assets";
 import { useNavigate } from "react-router-dom";
+import { useCartAndWishlist } from "hooks";
 function WishList() {
-  const { productData } = useProduct();
+  const { state } = useData();
+  const { handleWishlist } = useCartAndWishlist();
   const navigate = useNavigate();
+
   return (
     <div className="flex-grow">
       <div className="wishlist-main-container">
         <h1 className="wishlist-heading">My Wishlist</h1>
-        {productData.length > 0 ? (
-          productData.map((product) => (
+        {state.wishlist.length > 0 ? (
+          [...state.wishlist].map((product) => (
             <div className="wishlist-card" key={product._id}>
               <div className="wishlist-img-container">
                 <img src={product.imgUrl} alt="" />
@@ -32,7 +35,10 @@ function WishList() {
                   <button className="move-to-cart-button">Move To Cart</button>
                 </div>
               </div>
-              <button className="Wishlist-clear-btn">
+              <button
+                className="Wishlist-clear-btn"
+                onClick={(e) => handleWishlist(e, product)}
+              >
                 {" "}
                 <DeleteOutlineOutlinedIcon />{" "}
               </button>
