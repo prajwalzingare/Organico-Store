@@ -8,10 +8,12 @@ import {
   StarIcon,
   VerifiedIcon,
 } from "assets";
+import { useCartAndWishlist } from "hooks";
 
 function IndividualProduct() {
   const { productId } = useParams();
   const { productData } = useProduct();
+  const { isInWishlist, handleWishlistToggle } = useCartAndWishlist();
   const individualProduct = productData?.find((item) => item._id === productId);
 
   //   const {
@@ -88,8 +90,13 @@ function IndividualProduct() {
                 <button className="productdetails-add-cart-btn">
                   Add To Cart
                 </button>
-                <button className="productdetails-add-wishlist-btn">
-                  Add To Wishlist
+                <button
+                  className="productdetails-add-wishlist-btn"
+                  onClick={(e) => handleWishlistToggle(e, individualProduct)}
+                >
+                  {isInWishlist(individualProduct)
+                    ? "Remove From Wishlist"
+                    : " Add To Wishlist"}
                 </button>
               </div>
             </div>
