@@ -1,11 +1,12 @@
-import { useAuth } from "context";
+import { UPDATE_WISHLIST } from "constants";
+import { useAuth, useData } from "context";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { loginService } from "services";
+import { getWishlist, loginService } from "services";
 
 function useLoginHandler() {
   const { setToken, setCurrentUser } = useAuth();
-
+  const { dispatch } = useData();
   const location = useLocation();
   const navigate = useNavigate();
   const loginHandler = async (e, setLoginFormData, loginFormData) => {
@@ -23,7 +24,7 @@ function useLoginHandler() {
         res = await loginService("adarshbalak@gmail.com", "adarshbalak");
       } else
         res = await loginService(loginFormData.email, loginFormData.password);
-
+      const tokenResponse = res.encodedToken;
       //we are seting the user in local storage
 
       localStorage.setItem(
@@ -37,8 +38,13 @@ function useLoginHandler() {
       //seting the token and user after login handle function
       setToken(res.encodedToken);
       setCurrentUser(res.foundUser);
+      res = await getWishlist(tokenResponse);
+      dispatch({
+        type: UPDATE_WISHLIST,
+        payload: { wishlist: res.wishlist },
+      });
       //navigation to products page
-      navigate(location?.state?.from?.pathname || "/");
+      navigate(location?.state?.from || "/products");
       toast.success("Login successful!");
     } catch (error) {
       console.log("Error in login handler", error);
