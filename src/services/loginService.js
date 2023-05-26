@@ -11,7 +11,7 @@ async function loginService(email, password) {
     if (res.status === 200) {
       return res.data;
     } else {
-      throw new Error();
+      throw new Error("Failed to log in. Invalid response from the server.");
     }
   } catch (e) {
     console.log("loginService: Error in Login", e); //

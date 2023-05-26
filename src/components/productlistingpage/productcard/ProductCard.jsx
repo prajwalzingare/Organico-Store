@@ -25,7 +25,7 @@ function ProductCard({ product }) {
     isTrending,
   } = product;
 
-  const { isFavorite, handleButtonClick } = useCartAndWishlist();
+  const { handleWishlistToggle, isInWishlist } = useCartAndWishlist();
 
   const navigate = useNavigate();
 
@@ -42,10 +42,10 @@ function ProductCard({ product }) {
 
           <button
             className="product-card-wishlist-btn"
-            onClick={(e) => handleButtonClick(e)}
+            onClick={(e) => handleWishlistToggle(e, product)}
           >
             {" "}
-            {isFavorite ? (
+            {isInWishlist(product) ? (
               <FavoriteIcon />
             ) : (
               <FavoriteBorderOutlinedIcon style={{ color: "black" }} />
