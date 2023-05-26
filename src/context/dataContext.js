@@ -2,16 +2,20 @@ import React from "react";
 import { useReducer } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
-import { reducer } from "reducer";
+import { filterReducer, reducer } from "reducer";
 import { useProduct } from "./productContext";
 
-const intialState = {
+const intialFilterState = {
   searchText: "",
   sortBy: "",
   priceRange: { min: 0, max: 1100 },
   starRating: "",
   selectedCategory: [],
   isOutOfStock: true,
+  wishlist: [],
+};
+
+const initialState = {
   wishlist: [],
 };
 
@@ -76,11 +80,13 @@ function DataProvider({ children }) {
 
     return productsData;
   };
-
+  //usereducer for filters
   const [filteredProductState, dispatchFilter] = useReducer(
-    reducer,
-    intialState
+    filterReducer,
+    intialFilterState
   );
+  //usereducer for other state
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div>
@@ -88,6 +94,8 @@ function DataProvider({ children }) {
         value={{
           filteredProductState,
           dispatchFilter,
+          state,
+          dispatch,
           data: getData(filteredProductState),
         }}
       >
