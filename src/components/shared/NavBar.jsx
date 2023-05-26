@@ -7,11 +7,12 @@ import {
   ShoppingCartOutlinedIcon,
   SearchOutlinedIcon,
 } from "assets";
-import { useData } from "context";
+import { useAuth, useData } from "context";
 import { SEARCH_ITEM } from "constants";
 
 function NavBar() {
-  const { filteredProductState, dispatchFilter } = useData();
+  const { filteredProductState, dispatchFilter, state } = useData();
+  const { token } = useAuth();
   const navigate = useNavigate();
   const handleSearch = (e) => {
     dispatchFilter({ type: SEARCH_ITEM, payload: e.target.value });
@@ -53,7 +54,9 @@ function NavBar() {
               </div>
               <div className="nav-icons" onClick={() => navigate("/wishlist")}>
                 <FavoriteBorderIcon className="nav-icon" />
-                <span className="counter-badge">1</span>
+                {state.wishlist.length > 0 && token && (
+                  <span className="counter-badge">{state.wishlist.length}</span>
+                )}
               </div>
               <div className="nav-icons " onClick={() => navigate("/cart")}>
                 <ShoppingCartOutlinedIcon className="nav-icon" />
