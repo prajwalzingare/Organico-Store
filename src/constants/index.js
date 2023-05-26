@@ -6,4 +6,5 @@ export {
   SEARCH_ITEM,
   FILTER_BY_CATEGORY,
   TOGGLE_STOCK,
+  UPDATE_WISHLIST,
 } from "./constant";
