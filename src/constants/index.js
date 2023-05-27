@@ -7,4 +7,5 @@ export {
   FILTER_BY_CATEGORY,
   TOGGLE_STOCK,
   UPDATE_WISHLIST,
+  UPDATE_CART,
 } from "./constant";
