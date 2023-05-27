@@ -17,6 +17,7 @@ const intialFilterState = {
 
 const initialState = {
   wishlist: [],
+  cart: [],
 };
 
 const DataContext = createContext();
