@@ -17,4 +17,7 @@ export {
   RemoveShoppingCartOutlinedIcon,
   FavoriteIcon,
   ErrorRoundedIcon,
+  SellOutlinedIcon,
+  CloseIcon,
+  ShoppingCartCheckoutRoundedIcon,
 } from "./icons/materialIcons";
