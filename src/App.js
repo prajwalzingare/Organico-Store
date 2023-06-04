@@ -13,6 +13,7 @@ import {
   UserProfile,
   PrivateRoute,
   Cart,
+  Checkout,
 } from "components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,7 +27,6 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignupForm />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/products" element={<ProductListingPage />} />
         <Route path="/product/:productId" element={<IndividualProduct />} />
 
@@ -34,6 +34,8 @@ function App() {
         <Route path="/" element={<PrivateRoute />}>
           <Route path="/wishlist" element={<WishList />} />
           <Route path="/profile" element={<UserProfile />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
       </Routes>
       <ToastContainer position="bottom-right" autoClose={700} draggable />
