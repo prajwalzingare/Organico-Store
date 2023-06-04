@@ -1,5 +1,5 @@
 import { useProduct } from "context";
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./individualproduct.css";
 import {
@@ -13,8 +13,11 @@ import { useCartAndWishlist } from "hooks";
 function IndividualProduct() {
   const { productId } = useParams();
   const { productData } = useProduct();
-  const { isInWishlist, handleWishlistToggle } = useCartAndWishlist();
+  const { isInWishlist, handleWishlistToggle, isInCart, handleCartToggle } =
+    useCartAndWishlist();
   const individualProduct = productData?.find((item) => item._id === productId);
+  const [wishlistLoadingState, setWishlistLoadingState] = useState(false);
+  const [cartLoadingState, setCartLoadingState] = useState(false);
 
   //   const {
   //     _id,
@@ -87,12 +90,27 @@ function IndividualProduct() {
               </div>
               <hr />
               <div className="productdetails-button-container">
-                <button className="productdetails-add-cart-btn">
-                  Add To Cart
+                <button
+                  className="productdetails-add-cart-btn"
+                  disabled={cartLoadingState}
+                  onClick={(e) =>
+                    handleCartToggle(e, individualProduct, setCartLoadingState)
+                  }
+                >
+                  {isInCart(individualProduct)
+                    ? "Remove From Cart"
+                    : " Add To Cart"}
                 </button>
                 <button
                   className="productdetails-add-wishlist-btn"
-                  onClick={(e) => handleWishlistToggle(e, individualProduct)}
+                  disabled={wishlistLoadingState}
+                  onClick={(e) =>
+                    handleWishlistToggle(
+                      e,
+                      individualProduct,
+                      setWishlistLoadingState
+                    )
+                  }
                 >
                   {isInWishlist(individualProduct)
                     ? "Remove From Wishlist"

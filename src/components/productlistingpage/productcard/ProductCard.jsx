@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AddShoppingCartIcon,
   FavoriteBorderOutlinedIcon,
   FavoriteIcon,
   RemoveShoppingCartOutlinedIcon,
+  ShoppingCartCheckoutRoundedIcon,
   StarIcon,
 } from "assets";
 
@@ -25,7 +26,10 @@ function ProductCard({ product }) {
     isTrending,
   } = product;
 
-  const { handleWishlistToggle, isInWishlist } = useCartAndWishlist();
+  const { handleWishlistToggle, isInWishlist, isInCart, handleCartToggle } =
+    useCartAndWishlist();
+  const [cartLoadingState, setCartLoadingState] = useState(false);
+  const [wishlistLoadingState, setWishlistLoadingState] = useState(false);
 
   const navigate = useNavigate();
 
@@ -42,7 +46,10 @@ function ProductCard({ product }) {
 
           <button
             className="product-card-wishlist-btn"
-            onClick={(e) => handleWishlistToggle(e, product)}
+            disabled={wishlistLoadingState}
+            onClick={(e) =>
+              handleWishlistToggle(e, product, setWishlistLoadingState)
+            }
           >
             {" "}
             {isInWishlist(product) ? (
@@ -73,10 +80,25 @@ function ProductCard({ product }) {
               <RemoveShoppingCartOutlinedIcon className="add-cart-icon" />
               Out Of Stock
             </button>
-          ) : (
-            <button className="card-btn">
-              {" "}
+          ) : !isInCart(product) ? (
+            <button
+              className="card-btn"
+              disabled={cartLoadingState}
+              onClick={(e) => handleCartToggle(e, product, setCartLoadingState)}
+            >
               <AddShoppingCartIcon className="add-cart-icon" /> Add To Cart
+            </button>
+          ) : (
+            <button
+              className="card-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate("/cart");
+              }}
+            >
+              {" "}
+              <ShoppingCartCheckoutRoundedIcon className="add-cart-icon" /> Go
+              To Cart
             </button>
           )}
         </div>
