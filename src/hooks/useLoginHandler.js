@@ -1,8 +1,9 @@
+import { UPDATE_CART } from "constants";
 import { UPDATE_WISHLIST } from "constants";
 import { useAuth, useData } from "context";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { getWishlist, loginService } from "services";
+import { getCart, getWishlist, loginService } from "services";
 
 function useLoginHandler() {
   const { setToken, setCurrentUser } = useAuth();
@@ -42,6 +43,11 @@ function useLoginHandler() {
       dispatch({
         type: UPDATE_WISHLIST,
         payload: { wishlist: res.wishlist },
+      });
+      res = await getCart(tokenResponse);
+      dispatch({
+        type: UPDATE_CART,
+        payload: { cart: res.cart },
       });
       //navigation to products page
       navigate(location?.state?.from || "/products");

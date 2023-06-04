@@ -60,7 +60,9 @@ function NavBar() {
               </div>
               <div className="nav-icons " onClick={() => navigate("/cart")}>
                 <ShoppingCartOutlinedIcon className="nav-icon" />
-                <span className="counter-badge">1</span>
+                {state.cart.length > 0 && token && (
+                  <span className="counter-badge">{state.cart.length}</span>
+                )}
               </div>
             </div>
           </div>

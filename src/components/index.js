@@ -9,3 +9,7 @@ export { SignupForm } from "../components/authentication/signup/SignupForm";
 export { MockApi } from "./mockapi/MockApi";
 export { UserProfile } from "./profile/UserProfile";
 export { PrivateRoute } from "./authentication/privateroute/PrivateRoute";
+export { Cart } from "./cart/Cart";
+export { CartItem } from "./cart/CartItem";
+export { CartSummary } from "./cart/CartSummary";
+export { CouponModal } from "./cart/coupanmodel/CouponModel";

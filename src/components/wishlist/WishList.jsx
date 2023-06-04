@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./wishlist.css";
 import { useData } from "context";
 import {
   AddShoppingCartIcon,
   DeleteOutlineOutlinedIcon,
+  ShoppingCartCheckoutRoundedIcon,
   StarIcon,
 } from "assets";
 import { useNavigate } from "react-router-dom";
 import { useCartAndWishlist } from "hooks";
 function WishList() {
   const { state } = useData();
-  const { handleWishlist } = useCartAndWishlist();
+  const { handleWishlist, handleCartToggle } = useCartAndWishlist();
   const navigate = useNavigate();
+  const [cartLoadingState, setCartLoadingState] = useState(false);
 
   return (
     <div className="flex-grow">
@@ -19,7 +21,11 @@ function WishList() {
         <h1 className="wishlist-heading">My Wishlist</h1>
         {state.wishlist.length > 0 ? (
           [...state.wishlist].map((product) => (
-            <div className="wishlist-card" key={product._id}>
+            <div
+              className="wishlist-card"
+              onClick={() => navigate(`/product/${product._id}`)}
+              key={product._id}
+            >
               <div className="wishlist-img-container">
                 <img src={product.imgUrl} alt="" />
               </div>
@@ -32,7 +38,29 @@ function WishList() {
                 </p>
                 <p className="wishlist-price">₹{product.price}</p>
                 <div className="wishlist-button-container">
-                  <button className="move-to-cart-button">Move To Cart</button>
+                  {state.cart.some((item) => item._id === product._id) ? (
+                    <button
+                      className="move-to-cart-button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate("/cart");
+                      }}
+                    >
+                      <ShoppingCartCheckoutRoundedIcon className="icon" />
+                      Go To Cart
+                    </button>
+                  ) : (
+                    <button
+                      className="move-to-cart-button"
+                      disabled={cartLoadingState}
+                      onClick={(e) =>
+                        handleCartToggle(e, product, setCartLoadingState)
+                      }
+                    >
+                      <AddShoppingCartIcon className="icon" />
+                      Add To Cart
+                    </button>
+                  )}
                 </div>
               </div>
               <button
