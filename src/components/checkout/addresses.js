@@ -15,7 +15,7 @@ const addresses = [
   },
   {
     id: 3,
-    name: "Amit Singh",
+    name: "Amit Shah",
     address: "House No. 304, Gali No. 6, Model Town, New Delhi, Delhi, 110001",
     phoneNumber: "+91 8887776665",
   },
